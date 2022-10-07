@@ -23,19 +23,13 @@
   
   
   <entry>
-    <title>《万里归途》</title>
+    <title>第一篇博客</title>
     <link href="/2022/10/06/first_blog/"/>
     <url>/2022/10/06/first_blog/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="测试1"><a href="#测试1" class="headerlink" title="测试1"></a>测试1</h1><h2 id="测试2"><a href="#测试2" class="headerlink" title="测试2"></a>测试2</h2>]]></content>
     
     
-    
-    <tags>
-      
-      <tag>film</tag>
-      
-    </tags>
     
   </entry>
   
