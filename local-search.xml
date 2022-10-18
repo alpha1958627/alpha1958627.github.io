@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>电子线路&amp;电工学1</title>
+    <link href="/2022/10/18/E1/"/>
+    <url>/2022/10/18/E1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="电路基础">电路基础</h1><h2 id="电阻">电阻</h2><h2 id="电容">电容</h2><p><span class="math display">\[电流超前电压90^\circ\]</span></p><h2 id="电感">电感</h2><p><span class="math display">\[电流滞后电压90^\circ\]</span></p><h2 id="阻抗">阻抗</h2><p><span class="math display">\[\begin{aligned}Z_R&amp;=R\\Z_C&amp;=\frac{1}{j\omega C}&amp;=-j\frac{1}{\omega C}\\Z_L&amp;=j\omega L\\记容抗\\为X_C&amp;=-\frac{1}{\omega C}\\感抗为X_L&amp;=\omega L\\导纳为Y&amp;=\frac{1}{Z}\\\\\end{aligned}\\\]</span> 阻抗是频率的函数<spanclass="math inline">\(Z(j\omega)\)</span><br />可以写成<spanclass="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br /><span class="math inline">\(R\)</span>不仅仅取决于电阻<br /><span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br /><span class="math display">\[X(\omega)&gt;0称感性\\X(\omega)&lt;0称容性\\X(\omega)=0称电阻性\\\]</span></p><h2 id="功率">功率</h2><p><span class="math display">\[\begin{aligned}u(t)&amp;=\sqrt{2}Ucos(\omega t+\theta)\\i(t)&amp;=\sqrt{2}Icos\omegat\\P&amp;=UIcos\theta\\\end{aligned}\\\]</span> <spanclass="math inline">\(\theta\)</span>是阻抗角<br />纯电感和纯电容时为0,表示无能量消耗<br />纯电阻时功率最大 <spanclass="math inline">\(cos\theta\)</span>成为功率因数$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Mechanics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>材力笔记</title>
     <link href="/2022/10/18/M1/"/>
     <url>/2022/10/18/M1/</url>
