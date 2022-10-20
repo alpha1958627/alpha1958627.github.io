@@ -16,7 +16,7 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="电路基础 电阻 电容 \[电流超前电压90^\circ\] 电感 \[电流滞后电压90^\circ\] 阻抗 \[ \begin{aligned} Z_R&amp;amp;=R \\Z_C &amp;amp;=\frac{1}{j\omega C} &amp;amp;=-j\frac{1}{\omega C}\\ Z_L&amp;amp;=j\omega L\\ 记容抗\\为X_C&amp;amp;=-\fr">
+    <meta name="description" content="电路基础 电阻 电容 \[U=L\frac{di}{dt}\] \[电流超前电压90^\circ\] 电感 \[i=C\frac{du}{dt}\] \[电流滞后电压90^\circ\] 阻抗 相量只是表示正弦量，而不等于正弦量 \[ \begin{aligned} Z_R&amp;amp;=R \\Z_C &amp;amp;=\frac{1}{j\omega C} &amp;amp;=-j\fr">
   
   
   
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          584 字
+          741 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          5 分钟
+          7 分钟
         
       </span>
     
@@ -295,11 +295,14 @@
                 <h1 id="电路基础">电路基础</h1>
 <h2 id="电阻">电阻</h2>
 <h2 id="电容">电容</h2>
-<p><span class="math display">\[电流超前电压90^\circ\]</span></p>
+<p><span class="math display">\[U=L\frac{di}{dt}\]</span> <span
+class="math display">\[电流超前电压90^\circ\]</span></p>
 <h2 id="电感">电感</h2>
-<p><span class="math display">\[电流滞后电压90^\circ\]</span></p>
+<p><span class="math display">\[i=C\frac{du}{dt}\]</span> <span
+class="math display">\[电流滞后电压90^\circ\]</span></p>
 <h2 id="阻抗">阻抗</h2>
-<p><span class="math display">\[
+<p><strong><em>相量只是表示正弦量，而不等于正弦量</em></strong> <span
+class="math display">\[
 \begin{aligned}
 Z_R&amp;=R
 \\Z_C
@@ -316,9 +319,10 @@ class="math inline">\(Z(j\omega)\)</span><br />
 class="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br />
 <span class="math inline">\(R\)</span>不仅仅取决于电阻<br />
 <span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br />
-<span class="math display">\[X(\omega)&gt;0称感性\\
-X(\omega)&lt;0称容性\\
-X(\omega)=0称电阻性\\\]</span></p>
+<span class="math display">\[
+X(\omega)&gt;0称感性\]</span></p>
+<p><span class="math display">\[X(\omega)&lt;0称容性\]</span></p>
+<p><span class="math display">\[X(\omega)=0称电阻性\\\]</span></p>
 <h2 id="功率">功率</h2>
 <p><span class="math display">\[
 \begin{aligned}
@@ -329,7 +333,15 @@ P&amp;=UIcos\theta\\
 class="math inline">\(\theta\)</span>是阻抗角<br />
 纯电感和纯电容时为0,表示无能量消耗<br />
 纯电阻时功率最大 <span
-class="math inline">\(cos\theta\)</span>成为功率因数$</p>
+class="math inline">\(cos\theta\)</span>成为功率因数$<br />
+当<span
+class="math inline">\(RL\)</span>串联时电源处能量交换的值会变小（部分能量在<span
+class="math inline">\(R\)</span><span
+class="math inline">\(C\)</span>之间消耗<br />
+<strong>无功功率</strong></p>
+<p><strong>视在功率</strong> <span
+class="math display">\[S=UI=\left|Z\right|I^2\]</span> <span
+class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
 
                 
               </div>
