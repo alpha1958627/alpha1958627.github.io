@@ -16,7 +16,7 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="钢架的内力（Internal force）方向 平面刚（Plane frame members）  剪力（shear force）  任一侧，注明正负  弯矩（bending moment）  受压侧  轴力（axial force）  任一侧   平面曲杆（Plane curved bars)  剪力（shear force）  对任一点取矩，顺时针为正">
+    <meta name="description" content="钢架的内力（Internal force）方向 平面刚（Plane frame members）  剪力（shear force） &amp;gt; 任一侧，注明正负 弯矩（bending moment） &amp;gt; 受压侧 轴力（axial force） &amp;gt; 任一侧  平面曲杆（Plane curved bars)  剪力（shear force） &amp;gt; 对任一点取矩，顺时针">
   
   
   
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          383 字
+          1.3k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          11 分钟
         
       </span>
     
@@ -296,33 +296,15 @@
 force）方向</h1>
 <h2 id="平面刚plane-frame-members">平面刚（Plane frame members）</h2>
 <ol type="1">
-<li>剪力（shear force）
-<ol type="1">
-<li>任一侧，注明正负</li>
-</ol></li>
-<li>弯矩（bending moment）
-<ol type="1">
-<li>受压侧</li>
-</ol></li>
-<li>轴力（axial force）
-<ol type="1">
-<li>任一侧</li>
-</ol></li>
+<li>剪力（shear force） &gt; 任一侧，注明正负</li>
+<li>弯矩（bending moment） &gt; 受压侧</li>
+<li>轴力（axial force） &gt; 任一侧</li>
 </ol>
 <h2 id="平面曲杆plane-curved-bars">平面曲杆（Plane curved bars)</h2>
 <ol type="1">
-<li>剪力（shear force）
-<ol type="1">
-<li>对任一点取矩，顺时针为正</li>
-</ol></li>
-<li>弯矩（bending moment）
-<ol type="1">
-<li>使曲率增加即为正</li>
-</ol></li>
-<li>轴力（axial force）
-<ol type="1">
-<li>引起拉伸</li>
-</ol></li>
+<li>剪力（shear force） &gt; 对任一点取矩，顺时针为正</li>
+<li>弯矩（bending moment） &gt; 使曲率增加即为正</li>
+<li>轴力（axial force） &gt; 引起拉伸</li>
 </ol>
 <h1 id="截面几何性质properties-of-plane-areas">截面几何性质（Properties
 of plane areas）</h1>
@@ -336,6 +318,48 @@ inertia）</h2>
 <h2 id="平行移轴公式parallel-axis-theorem">平行移轴公式（Parallel-Axis
 theorem）</h2>
 <h2 id="转轴公式rotation-of-axes">转轴公式（Rotation of axes）</h2>
+<blockquote>
+<p>方向：逆时针转为正</p>
+</blockquote>
+<p><span class="math display">\[\begin{align}
+I_y&#39;&amp;=\frac{I_y+I_z}{2}+\frac{I_y-I_z}{2}cos2\alpha-I_{yz}sin2\alpha\\
+I_z&#39;&amp;=\frac{I_y+I_z}{2}-\frac{I_y-I_z}{2}cos2\alpha+I_{yz}sin2\alpha\\
+有I_y&#39;+I_z&#39;&amp;=I_y+I_z
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+I_{yz}&#39;=\frac{I_y-I_z}{2}sin2\alpha+I_{yz}cos2\alpha\\
+\end{align}\]</span> - 主惯性轴（Principal axes）令<span
+class="math inline">\(I_{yz}=0\)</span> - 主惯性矩（Principal moment of
+inertia） - 形心主惯性轴（centroidal principal axes） -
+形心主惯性矩（centroidal principal moment of inertia） <span
+class="math display">\[\begin{align}
+tg2\alpha_0&amp;=\frac{-2I_{yz}}{I_{y}-Iz}\\
+I_{y.or.z}&amp;=\frac{I_y+I_z}{2}\pm\sqrt{(I_y-I_z)^2+4I_{yz}^2}
+\end{align}\]</span> &gt; <span
+class="math inline">\(I_{y.or.z}\)</span>一个为<span
+class="math inline">\(max\)</span>一个<span
+class="math inline">\(min\)</span> ## 常用 1. 圆</p>
+<p><span class="math display">\[\begin{align}
+I_{\rho}&amp;=\frac{\pi d^4}{32}=\frac{\pi r^4}{2}\\
+I_{z}&amp;=\frac{\pi d^4}{64}=\frac{\pi r^4}{4}\\
+W&amp;=\frac{i}{y_{max}}
+\end{align}\]</span></p>
+<ol start="2" type="1">
+<li>矩形 <span class="math display">\[\begin{align}
+I_{z}=\frac{bh^3}{12}\\
+W=\frac{bh^2}{6}
+\end{align}\]</span></li>
+</ol>
+<h1 id="弯曲应力">弯曲应力</h1>
+<h2 id="纯弯曲pure-bending">纯弯曲Pure bending</h2>
+<blockquote>
+<p>无剪力只有弯矩</p>
+</blockquote>
+<h3 id="假设">假设</h3>
+<ul>
+<li>平面假设，横截面仍为平面</li>
+<li>单向受力假设，纵向纤维不相互挤压</li>
+</ul>
 
                 
               </div>
@@ -409,7 +433,7 @@ theorem）</h2>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/18/E1/" title="电子线路&amp;电工学1">
+                      <a href="/2022/10/18/E3/" title="电子线路&amp;电工学1">
                         <span class="hidden-mobile">电子线路&amp;电工学1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
