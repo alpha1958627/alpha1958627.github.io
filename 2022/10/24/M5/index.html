@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          2.4k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          11 分钟
+          20 分钟
         
       </span>
     
@@ -360,6 +360,73 @@ W=\frac{bh^2}{6}
 <li>平面假设，横截面仍为平面</li>
 <li>单向受力假设，纵向纤维不相互挤压</li>
 </ul>
+<p><span class="math display">\[\begin{align}
+\varepsilon&amp;=\frac{y}{\rho}\\
+\sigma&amp;=E\varepsilon=E\frac{y}{\rho}
+\end{align}\]</span></p>
+<p><strong>那么中性轴在哪？<span
+class="math inline">\(\rho\)</span>是多少?</strong></p>
+<p><span class="math inline">\(F_N=\int_A
+E\frac{y}{\rho}dA=0\)</span>\得到中性轴在形心（Centroid of an
+area）上</p>
+<p>立即得<span class="math inline">\(M_{iy}=\int_A
+zE\frac{y}{\rho}dA=0\)</span></p>
+<p><span class="math inline">\(M_{iz}=\int_A
+yE\frac{y}{\rho}dA=M\)</span>得到</p>
+<p><span class="math display">\[\begin{align}
+\frac{1}{\rho}=\frac{M}{EI_z}\\
+有\sigma=E\frac{y}{\rho}=\frac{My}{I_z}
+\end{align}\]</span></p>
+<h2
+id="横力弯曲时的正应力normal-stresses-of-the-beam-in-nonuniform-bending">横力弯曲时的正应力（Normal
+stresses of the beam in nonuniform bending）</h2>
+<p><span class="math display">\[\begin{align}
+\sigma&amp;=\frac{M}{W}\\
+W&amp;=\frac{I_z}{y_{max}}
+\end{align}\]</span></p>
+<p>The applicable range of the flexure formula</p>
+<ol type="1">
+<li>All stresses in the beam are below proportional limit</li>
+<li>The beam with the shear stress</li>
+<li>Plane bending</li>
+<li>Straight beams</li>
+</ol>
+<p>10.24待补充</p>
+<h1 id="弯曲变形deflection-of-beams">弯曲变形（Deflection of
+beams）</h1>
+<h2 id="basic-concepts">Basic concepts</h2>
+<ol type="1">
+<li>Deflection 挠度</li>
+<li>Slope 转角</li>
+<li>Deflection curve 挠曲线</li>
+<li>Relationship between deflection and slope:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\theta\approx
+tan\theta=\omega&#39;\)</span></p>
+</blockquote>
+<ol start="5" type="1">
+<li>Sign convention for deflection and slope</li>
+</ol>
+<blockquote>
+<p>挠度向上为正</p>
+</blockquote>
+<blockquote>
+<p>转角自x转至切线，逆时针为正</p>
+</blockquote>
+<h2
+id="differential-equation-of-the-deflection-curve"><strong>Differential
+equation of the deflection curve</strong></h2>
+<p><span class="math inline">\(\frac{1}{\rho}=\frac{M}{EI}\)</span></p>
+<p><span
+class="math inline">\(\frac{1}{\rho}=\frac{\left|\omega&#39;&#39;\right|}{(1+\omega&#39;^2)^{\frac{3}{2}}}\)</span></p>
+<p><strong><em>将<span
+class="math inline">\(\omega&#39;^2\)</span>略去</em></strong></p>
+<p><span class="math display">\[\begin{align}
+EI\omega&#39;&#39;=M
+\end{align}\]</span></p>
+<h2 id="beam-deflection-by-integration"><strong>Beam deflection by
+integration</strong></h2>
 
                 
               </div>
@@ -433,7 +500,7 @@ W=\frac{bh^2}{6}
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/18/E3/" title="电子线路&amp;电工学1">
+                      <a href="/2022/10/18/E1/" title="电子线路&amp;电工学1">
                         <span class="hidden-mobile">电子线路&amp;电工学1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
