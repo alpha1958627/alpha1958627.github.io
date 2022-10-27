@@ -16,7 +16,7 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="aaa">
+    <meta name="description" content="任何放大电路都可以看成二端口  重点关注： \[ \begin{align} A_u=\frac{U_o}{U_i} \end{align}\\ 输入电阻R_i=\frac{U_i}{I_i}\\ 输出电阻R_o=\frac{U_o}{I_o}\\ \]  通频带 非线性失真系数\(D\) 最大不失真输出幅度：峰峰值\((U_{opp},I_{opp})\)or有效值">
   
   
   
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3 字
+          476 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -292,7 +292,50 @@
             
               <div class="markdown-body">
                 
-                <p>aaa</p>
+                <blockquote>
+<p>任何放大电路都可以看成二端口</p>
+</blockquote>
+<p>重点关注：</p>
+<p><span class="math display">\[
+\begin{align}
+A_u=\frac{U_o}{U_i}
+\end{align}\\
+输入电阻R_i=\frac{U_i}{I_i}\\
+输出电阻R_o=\frac{U_o}{I_o}\\
+\]</span></p>
+<ul>
+<li><p>通频带</p></li>
+<li><p>非线性失真系数<span class="math inline">\(D\)</span></p></li>
+<li><p>最大不失真输出幅度：峰峰值<span
+class="math inline">\((U_{opp},I_{opp})\)</span>or有效值<span
+class="math inline">\((U_{om},I_{om})\)</span></p></li>
+<li><p>最大输出功率和效率<span
+class="math inline">\(\eta=\frac{P_{om}}{P_v}\)</span></p>
+<p>其中<span class="math inline">\(P_v\)</span>为直流电源消耗的功率</p>
+<h2 id="放大原则">放大原则</h2></li>
+</ul>
+<ol type="1">
+<li><strong>晶体管</strong>工作在放大区，<strong>场效应管</strong>工作在恒流区</li>
+<li><strong>晶体管</strong>有<span class="math inline">\(\Delta
+u_{BE}\)</span>，<strong>场效应管</strong>有<span
+class="math inline">\(\Delta u_{GS}\)</span>（打开了水龙头）</li>
+</ol>
+<figure>
+<img src="/img/E41.jpg" alt="单极共射电路" />
+<figcaption aria-hidden="true">单极共射电路</figcaption>
+</figure>
+<h1 id="单级共射放大电路">单级共射放大电路</h1>
+<p><img src="/img/E5.jpg" alt="单极共射电路" /> - T:<span
+class="math inline">\(NPN\)</span>型三极管 - <span
+class="math inline">\(V_{BB}\)</span>：使得发射极正偏<span
+class="math inline">\(U_{BE}&gt;U_{on}\)</span></p>
+<p>若<span class="math inline">\(V_{BB}=0\)</span> ，必失真 - <span
+class="math inline">\(V_{CC}\)</span>：使得收集极反偏<span
+class="math inline">\(U_{CE}\ge U_{BE}\)</span></p>
+<blockquote>
+<p>注意<strong>输出输入反相</strong></p>
+</blockquote>
+<p>因为<span class="math inline">\(U_C=V_{CC}-\beta I_b R\)</span></p>
 
                 
               </div>
