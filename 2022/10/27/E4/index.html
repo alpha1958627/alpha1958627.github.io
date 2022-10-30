@@ -16,7 +16,7 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="任何放大电路都可以看成二端口  重点关注： \[ \begin{align} A_u=\frac{U_o}{U_i} \end{align}\\ 输入电阻R_i=\frac{U_i}{I_i}\\ 输出电阻R_o=\frac{U_o}{I_o}\\ \]  通频带 非线性失真系数\(D\) 最大不失真输出幅度：峰峰值\((U_{opp},I_{opp})\)or有效值">
+    <meta name="description" content="任何放大电路都可以看成二端口i  重点关注： \[ \begin{align} A_u=\frac{U_o}{U_i} \end{align}\\ 输入电阻R_i=\frac{U_i}{I_i}\\ 输出电阻R_o=\frac{U_o}{I_o}\\ \]  通频带 非线性失真系数\(D\) 最大不失真输出幅度：峰峰值\((U_{opp},I_{opp})\)or有效">
   
   
   
@@ -196,7 +196,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/E4.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/B2.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          476 字
+          763 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -293,7 +293,7 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>任何放大电路都可以看成二端口</p>
+<p>任何放大电路都可以看成二端口i</p>
 </blockquote>
 <p>重点关注：</p>
 <p><span class="math display">\[
@@ -336,6 +336,24 @@ class="math inline">\(U_{CE}\ge U_{BE}\)</span></p>
 <p>注意<strong>输出输入反相</strong></p>
 </blockquote>
 <p>因为<span class="math inline">\(U_C=V_{CC}-\beta I_b R\)</span></p>
+<figure>
+<img src="/img/EZ.png" alt="三种放大电路" />
+<figcaption aria-hidden="true">三种放大电路</figcaption>
+</figure>
+<blockquote>
+<p>哪个极接地就是哪类</p>
+</blockquote>
+<h2 id="共集电极放大电路">共集电极放大电路</h2>
+<ul>
+<li>通过<span class="math inline">\(V_{CC}\)</span>接地</li>
+<li><span class="math inline">\(I_{B}\approx
+\frac{V_{CC}-U_{BE}}{R_1+(1+\beta )R_2}\)</span></li>
+<li>同相放大(<strong>射极跟随放大</strong>)</li>
+<li><span class="math inline">\(U_0=U_B-U_{BE}\)</span>
+故没有电压放大功能，只有<strong>电流放大</strong></li>
+</ul>
+<p><font face="楷体" size="2" color="#5d3f51">由于共集电极放大器具有<strong>输入阻抗高、输出阻抗低</strong>的优点，所以在多级放大电路中，通常利用共集电极放大器将前级和后级放大器进行隔离，由它对信号进行缓冲放大，以免前、后级放大器互相影响。又因共集电极放大器具有电流放大功能，所以不仅串联稳压电源采用此类放大器，而且有的多级放大电路的末级放大器也采用此类放大器。</p>
+<p></font></p>
 
                 
               </div>
