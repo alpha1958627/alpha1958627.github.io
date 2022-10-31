@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="把放大电路转换成等效电路 计算特性参数，重点关注：  \[ A_u=\frac{U_o}{U_i} \] \[ 输入电阻R_i=\frac{U_i}{I_i} \] \[ 输出电阻R_o=\frac{U_o}{I_o}\\ \] 3. 高频\(\pi\)、低频\(\pi\)、\(P106 图3-27\)简化模型、\(h\)参数 低频\(\pi\)  \(C\rig">
+    <meta name="description" content="Laplace变换 傅里叶变换 我们知道傅里叶正变换 \[ 正变换:F(j\omega)= \int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\\ 反变换:f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(j\omega)e^{j\omega t}d\omega\\其前提是F(j\omega ) 收敛 \]">
   
   
   
-  <title>放大电路基础 - Hexo</title>
+  <title>电子线路&amp;电工学1 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/B2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/B3.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="放大电路基础"></span>
+            <span id="subtitle" data-typed-text="电子线路&amp;电工学1"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-27 11:00" pubdate>
-          2022年10月27日 上午
+        <time datetime="2022-10-31 16:00" pubdate>
+          2022年10月31日 下午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.6k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          10 分钟
+          14 分钟
         
       </span>
     
@@ -287,112 +287,96 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">放大电路基础</h1>
+            <h1 style="display: none">电子线路&amp;电工学1</h1>
             
             
               <div class="markdown-body">
                 
-                <ol type="1">
-<li>把放大电路转换成等效电路</li>
-<li>计算特性参数，重点关注：</li>
-</ol>
-<p><span class="math display">\[
-A_u=\frac{U_o}{U_i}
-\]</span></p>
-<p><span class="math display">\[
-输入电阻R_i=\frac{U_i}{I_i}
-\]</span></p>
-<p><span class="math display">\[
-输出电阻R_o=\frac{U_o}{I_o}\\
-\]</span> 3. 高频<span class="math inline">\(\pi\)</span>、低频<span
-class="math inline">\(\pi\)</span>、<span class="math inline">\(P106
-图3-27\)</span>简化模型、<span class="math inline">\(h\)</span>参数</p>
-<h2 id="低频pi"><strong>低频<span
-class="math inline">\(\pi\)</span></strong></h2>
-<ul>
-<li><span class="math inline">\(C\rightarrow E\)</span>
-电阻和电流源串联</li>
-<li><span class="math inline">\(B\rightarrow E\)</span>
-两个电阻串联</li>
-</ul>
-<h2 id="简化模型"><strong>简化模型</strong></h2>
-<ul>
-<li><p><span class="math inline">\(C\rightarrow E\)</span>
-一个电流源</p></li>
-<li><p><span class="math inline">\(B\rightarrow E\)</span> 一个电阻
-&gt;任何放大电路都可以看成二端口i</p></li>
-<li><p>通频带</p></li>
-<li><p>非线性失真系数<span class="math inline">\(D\)</span></p></li>
-<li><p>最大不失真输出幅度：峰峰值<span
-class="math inline">\((U_{opp},I_{opp})\)</span>or有效值<span
-class="math inline">\((U_{om},I_{om})\)</span></p></li>
-<li><p>最大输出功率和效率<span
-class="math inline">\(\eta=\frac{P_{om}}{P_v}\)</span></p>
-<p>其中<span class="math inline">\(P_v\)</span>为直流电源消耗的功率</p>
-<h2 id="放大原则">放大原则</h2></li>
-</ul>
+                <h1 id="laplace变换">Laplace变换</h1>
+<h2 id="傅里叶变换">傅里叶变换</h2>
+<p>我们知道傅里叶正变换 <span class="math display">\[
+正变换:F(j\omega)=
+\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\\
+反变换:f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(j\omega)e^{j\omega
+t}d\omega\\其前提是F(j\omega ) 收敛
+\]</span> 要求绝对可积 <span class="math display">\[
+但是对f(t)=e^{-\alpha
+t}\varepsilon(t),\omega&lt;0时候，显然不收敛\\为此，我们引入拉普拉斯变换\]</span>
+拉普拉斯变换
+拉普拉斯变换的物理意义是先将信号函数衰减后，求它的频率密度谱</p>
+<p>对不收敛的信号<span
+class="math inline">\(f(t)\)</span>,乘上收敛因子，得到 <span
+class="math display">\[
+g(t)=f(t)e^{-\alpha t}\]</span></p>
+<p>因此, 便可对 <span class="math inline">\(g(t)\)</span>
+使用傅里叶变换, 其傅里叶变换为</p>
+$$
+<span class="math display">\[\begin{array}{l}
+G(j w)=\int_{-\infty}^{+\infty} g(t) e^{-j w t} d t=
+\int_{-\infty}^{+\infty} f(t) e^{-\sigma t} e^{-j w t} d t\\=
+\int_{-\infty}^{+\infty} f(t) e^{-(\sigma+j w) t} d
+t=\int_{-\infty}^{+\infty} f(t) e^{-s t}
+=F(s)
+\end{array}\]</span>
+<p>\其中s=+j<span class="math display">\[
+只需要0，正无穷绝对可积
+拉普拉斯正变换
+\]</span> F(s)=_{-}^{+} f(t) e^{-s t} d t, s=+j w<span
+class="math display">\[
+即傅里叶是$\sigma=0$的拉普拉斯
+拉普拉斯反变换
+\]</span>f(t)=g(t)e<sup>{t}=<em>{-}^{+} G(j) e<sup>{t}e</sup>{jt} d
+<span class="math display">\[
+\]</span>f(t)=</em>{-}</sup>{+} F(s)e^{st} d s\
+，如f(t)=e^{t}(t),&gt;1$$</p>
+<h2 id="条件">条件</h2>
 <ol type="1">
-<li><strong>晶体管</strong>工作在放大区，<strong>场效应管</strong>工作在恒流区</li>
-<li><strong>晶体管</strong>有<span class="math inline">\(\Delta
-u_{BE}\)</span>，<strong>场效应管</strong>有<span
-class="math inline">\(\Delta u_{GS}\)</span>（打开了水龙头）</li>
+<li>有限个第一类间断点，逐段光滑;</li>
+<li><span class="math inline">\(\exist K&gt;0,c\ge0\)</span>,使得<span
+class="math inline">\(\left|f(t)\right|\le Ke^{ct}\)</span></li>
 </ol>
-<figure>
-<img src="/img/E41.jpg" alt="单极共射电路" />
-<figcaption aria-hidden="true">单极共射电路</figcaption>
-</figure>
-<h1 id="单级共射放大电路">单级共射放大电路</h1>
-<figure>
-<img src="/img/E5.png" alt="单极共射电路" />
-<figcaption aria-hidden="true">单极共射电路</figcaption>
-</figure>
+<h2 id="运算法则">运算法则</h2>
+<h3 id="典型">典型</h3>
 <ul>
-<li><p><span class="math inline">\(T\)</span>:<span
-class="math inline">\(NPN\)</span>型三极管</p></li>
-<li><p><span class="math inline">\(V_{BB}\)</span>：使得发射极正偏<span
-class="math inline">\(U_{BE}&gt;U_{on}\)</span></p>
-<p>若<span class="math inline">\(V_{BB}=0\)</span> ，必失真</p></li>
-<li><p><span class="math inline">\(V_{CC}\)</span>：使得收集极反偏<span
-class="math inline">\(U_{CE}\ge U_{BE}\)</span></p></li>
+<li><span class="math inline">\(L\left[
+e^{at}\right]=\frac{1}{p-a}\)</span></li>
 </ul>
-<blockquote>
-<p>注意<strong>输出输入反相</strong></p>
-</blockquote>
-<p>因为<span class="math inline">\(U_C=V_{CC}-\beta I_b R\)</span></p>
-<figure>
-<img src="/img/EZ.png" alt="三种放大电路" />
-<figcaption aria-hidden="true">三种放大电路</figcaption>
-</figure>
-<blockquote>
-<p>哪个极接地就是哪类</p>
-</blockquote>
-<blockquote>
-<p>输入电阻不考虑<span
-class="math inline">\(R_S\)</span>,输出电阻不考虑<span
-class="math inline">\(R_L\)</span></p>
-</blockquote>
-<h2 id="共集电极放大电路">共集电极放大电路</h2>
+<p>Tips:在半平面<span class="math inline">\(Re p&gt; Re a\)</span>上</p>
 <ul>
-<li>通过<span class="math inline">\(V_{CC}\)</span>接地</li>
-<li><span class="math inline">\(I_{B}\approx
-\frac{V_{CC}-U_{BE}}{R_1+(1+\beta )R_2}\)</span></li>
-<li>同相放大(<strong>射极跟随放大</strong>)</li>
-<li><span class="math inline">\(U_0=U_B-U_{BE}\)</span>
-故没有电压放大功能，只有<strong>电流放大</strong></li>
+<li>线性 <span class="math display">\[L\left[ \alpha f(t)+\beta
+g(t)\right]=\alpha L\left[f(t) \right]+\beta L\left[
+g(t)\right]\]</span></li>
+<li>相似定理</li>
 </ul>
-<p><font face="楷体" size="2" color="#5d3f51">由于共集电极放大器具有<strong>输入阻抗高、输出阻抗低</strong>的优点，所以在多级放大电路中，通常利用共集电极放大器将前级和后级放大器进行隔离，由它对信号进行缓冲放大，以免前、后级放大器互相影响。又因共集电极放大器具有电流放大功能，所以不仅串联稳压电源采用此类放大器，而且有的多级放大电路的末级放大器也采用此类放大器。
-</font></p>
-<h2 id="直流负反馈">直流负反馈</h2>
-<p>为防止温度影响工作点，导致失真</p>
-<blockquote>
-<p>常使用分压式偏置电路</p>
-</blockquote>
-<p>温度升高,<span class="math inline">\(\beta\)</span>变大，<span
-class="math inline">\(I_{CQ}\)</span>变大</p>
-<p><span class="math inline">\(U_{EQ}=I_{EQ}\cdot R_e\)</span>变大</p>
-<p><span class="math inline">\(U_{BEQ}=U_{BQ}-U_{EQ}\)</span>变小</p>
-<p>使得<span class="math inline">\(I_B\)</span>变小，制约<span
-class="math inline">\(I_C\)</span></p>
+<p><span class="math display">\[L\left[
+f(at)\right]=\frac{1}{a}F(\frac{p}{a})\]</span> - 位移定理</p>
+<p><span class="math display">\[L\left[ e^{\lambda t
+}f(t)\right]=F(p-\lambda)\]</span> - 延迟定理</p>
+<p><span class="math display">\[L\left[ f(t-\tau)\right]= e^{-\tau
+p}F(p)\]</span></p>
+<ul>
+<li>像函数微分</li>
+</ul>
+<p><span class="math display">\[F&#39;(p)=L\left[
+-tf(t)\right]\]</span></p>
+<p><span class="math display">\[F^{(n)}(p)=L\left[
+(-1)^nt^nf(t)\right]\]</span> - 本函数微分</p>
+<p><span
+class="math display">\[L\left[f&#39;(t)\right]=pF(p)-f(+0)\]</span></p>
+<p><span
+class="math display">\[L\left[f^{(n)}(t)\right]=p^nF(p)-p^{n-1}f(+0)-p^{n-2}f&#39;(+0)-\cdots-pf^{(n-2)}(+0)-f^{(n-1)}(+0)\]</span>
+- 本函数积分</p>
+<p><span class="math display">\[L\left[\int_0^tf(t) d
+t\right]=\frac{F(p)}{p}\]</span> - 卷积 <span
+class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
+\]</span></p>
+<pre><code class="hljs">- 交换律
+- 结合律
+- 分配律
+- 卷积定理</code></pre>
+<p><span class="math display">\[L\left[f*g\right ]=F(p)G(p)\]</span></p>
+<p><span class="math display">\[L^{-1}\left[F(p)G(p)\right
+]=f*g\]</span></p>
 
                 
               </div>
@@ -417,8 +401,8 @@ class="math inline">\(I_C\)</span></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>放大电路基础</div>
-      <div>http://example.com/2022/10/27/E4/</div>
+      <div>电子线路&amp;电工学1</div>
+      <div>http://example.com/2022/10/31/Laplace/</div>
     </div>
     <div class="license-meta">
       
@@ -430,7 +414,7 @@ class="math inline">\(I_C\)</span></p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月27日</div>
+          <div>2022年10月31日</div>
         </div>
       
       
@@ -462,18 +446,12 @@ class="math inline">\(I_C\)</span></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/31/Laplace/" title="电子线路&amp;电工学1">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">电子线路&amp;电工学1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/26/M5/" title="材力笔记">
-                        <span class="hidden-mobile">材力笔记</span>
+                      <a href="/2022/10/27/E4/" title="放大电路基础">
+                        <span class="hidden-mobile">放大电路基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
