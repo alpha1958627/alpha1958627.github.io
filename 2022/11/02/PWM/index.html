@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="傅里叶展开 迪利克雷条件  有限个间断点 一个周期里有限个极值点  \(f(x)\sim \frac{a_0}{2}+\Sigma_{n=0}^{\infty}a_n cosnx+b_nsinnx\) \(a_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)cos nxdx\) \(b_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)">
+    <meta name="description" content="Pulse Width Modulation 面积等效原理 冲量相同，时间、形状不同的波形对惯性环节具有相同效果  使用方波信号模拟正弦信号  占空比 Duty Ratio \[\frac{t_{高电平}}{T}\] \[U=U_m\times 占空比\] \(\Rightarrow\)D/A转换">
   
   
   
-  <title>Laplace - Hexo</title>
+  <title>PWM - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/B3.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Laplace"></span>
+            <span id="subtitle" data-typed-text="PWM"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-31 16:00" pubdate>
-          2022年10月31日 下午
+        <time datetime="2022-11-02 11:00" pubdate>
+          2022年11月2日 上午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          135 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          15 分钟
+          2 分钟
         
       </span>
     
@@ -287,109 +287,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Laplace</h1>
+            <h1 style="display: none">PWM</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="傅里叶展开">傅里叶展开</h2>
-<p><strong>迪利克雷条件</strong></p>
-<ol type="1">
-<li>有限个间断点</li>
-<li>一个周期里有限个极值点</li>
-</ol>
-<p><span class="math inline">\(f(x)\sim
-\frac{a_0}{2}+\Sigma_{n=0}^{\infty}a_n cosnx+b_nsinnx\)</span></p>
-<p><span class="math inline">\(a_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)cos
-nxdx\)</span></p>
-<p><span class="math inline">\(b_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)sin
-nxdx\)</span> # Laplace变换</p>
-<h2 id="傅里叶变换">傅里叶变换</h2>
-<p>我们知道傅里叶正变换 <span class="math display">\[
-正变换:F(j\omega)=
-\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\\
-反变换:f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(j\omega)e^{j\omega
-t}d\omega\\其前提是F(j\omega ) 收敛
-\]</span></p>
-<p>要求绝对可积</p>
-<p><span class="math display">\[
-但是对f(t)=e^{-\alpha
-t}\varepsilon(t),\omega&lt;0时候，显然不收敛\\为此，我们引入拉普拉斯变换\]</span>
-拉普拉斯变换
-拉普拉斯变换的物理意义是先将信号函数衰减后，求它的频率密度谱</p>
-<p>对不收敛的信号<span
-class="math inline">\(f(t)\)</span>,乘上收敛因子，得到 <span
-class="math display">\[
-g(t)=f(t)e^{-\alpha t}\]</span></p>
-<p>因此, 便可对 <span class="math inline">\(g(t)\)</span>
-使用傅里叶变换, 其傅里叶变换为</p>
-$$
-<span class="math display">\[\begin{array}{l}
-G(j w)=\int_{-\infty}^{+\infty} g(t) e^{-j w t} d t=
-\int_{-\infty}^{+\infty} f(t) e^{-\sigma t} e^{-j w t} d t\\=
-\int_{-\infty}^{+\infty} f(t) e^{-(\sigma+j w) t} d
-t=\int_{-\infty}^{+\infty} f(t) e^{-s t}
-=F(s)
-\end{array}\]</span>
-<p>\其中s=+j<span class="math display">\[
-只需要0，正无穷绝对可积
-拉普拉斯正变换
-\]</span> F(s)=_{-}^{+} f(t) e^{-s t} d t, s=+j w<span
-class="math display">\[
-即傅里叶是$\sigma=0$的拉普拉斯
-拉普拉斯反变换
-\]</span>f(t)=g(t)e<sup>{t}=<em>{-}^{+} G(j) e<sup>{t}e</sup>{jt} d
-<span class="math display">\[
-\]</span>f(t)=</em>{-}</sup>{+} F(s)e^{st} d s\
-，如f(t)=e^{t}(t),&gt;1$$</p>
-<h2 id="条件">条件</h2>
-<ol type="1">
-<li>有限个第一类间断点，逐段光滑;</li>
-<li><span class="math inline">\(\exist K&gt;0,c\ge0\)</span>,使得<span
-class="math inline">\(\left|f(t)\right|\le Ke^{ct}\)</span></li>
-</ol>
-<h2 id="运算法则">运算法则</h2>
-<h3 id="典型">典型</h3>
-<ul>
-<li><span class="math inline">\(L\left[
-e^{at}\right]=\frac{1}{p-a}\)</span></li>
-</ul>
-<p>Tips:在半平面<span class="math inline">\(Re p&gt; Re a\)</span>上</p>
-<ul>
-<li>线性 <span class="math display">\[L\left[ \alpha f(t)+\beta
-g(t)\right]=\alpha L\left[f(t) \right]+\beta L\left[
-g(t)\right]\]</span></li>
-<li>相似定理</li>
-</ul>
-<p><span class="math display">\[L\left[
-f(at)\right]=\frac{1}{a}F(\frac{p}{a})\]</span> - 位移定理</p>
-<p><span class="math display">\[L\left[ e^{\lambda t
-}f(t)\right]=F(p-\lambda)\]</span> - 延迟定理</p>
-<p><span class="math display">\[L\left[ f(t-\tau)\right]= e^{-\tau
-p}F(p)\]</span></p>
-<ul>
-<li>像函数微分</li>
-</ul>
-<p><span class="math display">\[F&#39;(p)=L\left[
--tf(t)\right]\]</span></p>
-<p><span class="math display">\[F^{(n)}(p)=L\left[
-(-1)^nt^nf(t)\right]\]</span> - 本函数微分</p>
-<p><span
-class="math display">\[L\left[f&#39;(t)\right]=pF(p)-f(+0)\]</span></p>
-<p><span
-class="math display">\[L\left[f^{(n)}(t)\right]=p^nF(p)-p^{n-1}f(+0)-p^{n-2}f&#39;(+0)-\cdots-pf^{(n-2)}(+0)-f^{(n-1)}(+0)\]</span>
-- 本函数积分</p>
-<p><span class="math display">\[L\left[\int_0^tf(t) d
-t\right]=\frac{F(p)}{p}\]</span> - 卷积 <span
-class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
-\]</span></p>
-<pre><code class="hljs">- 交换律
-- 结合律
-- 分配律
-- 卷积定理</code></pre>
-<p><span class="math display">\[L\left[f*g\right ]=F(p)G(p)\]</span></p>
-<p><span class="math display">\[L^{-1}\left[F(p)G(p)\right
-]=f*g\]</span></p>
+                <h1
+id="pulse-width-modulation"><font  color="#66c18c"><strong>P</strong></font>ulse
+<font  color="#66c18c"><strong>W</strong></font>idth
+<font  color="#66c18c"><strong>M</strong></font>odulation</h1>
+<h2 id="面积等效原理">面积等效原理</h2>
+<p>冲量相同，时间、形状不同的波形对惯性环节具有相同效果</p>
+<blockquote>
+<p>使用方波信号模拟正弦信号</p>
+</blockquote>
+<h2
+id="占空比-duty-ratio"><font  color="#66c18c"><strong>占空比</strong></font>
+Duty Ratio</h2>
+<p><span class="math display">\[\frac{t_{高电平}}{T}\]</span></p>
+<p><span class="math display">\[U=U_m\times 占空比\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span>D/A转换</p>
 
                 
               </div>
@@ -414,8 +331,8 @@ class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Laplace</div>
-      <div>http://example.com/2022/10/31/Laplace/</div>
+      <div>PWM</div>
+      <div>http://example.com/2022/11/02/PWM/</div>
     </div>
     <div class="license-meta">
       
@@ -427,7 +344,7 @@ class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月31日</div>
+          <div>2022年11月2日</div>
         </div>
       
       
@@ -459,9 +376,9 @@ class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/02/PWM/" title="PWM">
+                      <a href="/2022/11/08/3xiangdian/" title="三相电">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PWM</span>
+                        <span class="hidden-mobile">三相电</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -469,8 +386,8 @@ class="math display">\[\int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi 记作f*g
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/27/E4/" title="放大电路基础">
-                        <span class="hidden-mobile">放大电路基础</span>
+                      <a href="/2022/10/31/Laplace/" title="Laplace">
+                        <span class="hidden-mobile">Laplace</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
