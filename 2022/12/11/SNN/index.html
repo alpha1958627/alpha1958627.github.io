@@ -13,14 +13,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Alpha">
+  <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="">
+    <meta name="description" content="Spiking Neural Network 第三代神经网路 脉冲神经元  ANN：直接过激活函数 SNN：不断积累，过阈值之后再输出，然后重置。   LIF IF  常被简化成离散计算 不是每时每刻都发放脉冲 ## 低功耗 - ANN：精度高但是功耗大 - SNN：基于事件触发的特性与神经形态的硬件（TrueNorth、SpiNNaker等）结合，极大降低功耗。如果用G">
   
   
   
-  <title>三相电 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/aa.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="三相电"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -212,14 +212,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Alpha
+        John Doe
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-08 11:00" pubdate>
-          2022年11月8日 上午
+        <time datetime="2022-12-11 23:25" pubdate>
+          2022年12月11日 晚上
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          459 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -287,12 +287,58 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">三相电</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h1 id="spiking-neural-network-第三代神经网路">Spiking Neural Network
+第三代神经网路</h1>
+<h2 id="脉冲神经元">脉冲神经元</h2>
+<ul>
+<li>ANN：直接过激活函数</li>
+<li>SNN：不断积累，过阈值之后再输出，然后重置。</li>
+</ul>
+<ol type="1">
+<li>LIF</li>
+<li>IF</li>
+</ol>
+<p>常被简化成离散计算 不是每时每刻都发放脉冲 ## 低功耗 -
+ANN：精度高但是功耗大 -
+SNN：基于<strong>事件触发</strong>的特性与<strong>神经形态</strong>的硬件（TrueNorth、SpiNNaker等）结合，极大降低功耗。如果用GPU、华为昇騰等则不行，功耗会更大。</p>
+<h2 id="鲁棒性">鲁棒性</h2>
+<p><img
+src="https://pic4.zhimg.com/80/v2-01c62b61bf2426e1a034a48706291b87.png"
+alt="对输入进行加噪以后，反而得到更好的性能" /> <strong>Why</strong>
+积分带有<strong>高频滤波</strong>的特性 ## 学习方法 - 有监督 - Surrogate
+Gradient Method（替代梯度 - Time-based Method - BP with
+STDP(生物合理性)</p>
+<ul>
+<li>无监督
+<ul>
+<li>Spike-based EM</li>
+</ul></li>
+<li>奖励学习</li>
+<li>ANN-SNN</li>
+</ul>
+<h3 id="替代梯度">替代梯度</h3>
+<p><img
+src="https://pic4.zhimg.com/80/v2-43b7d49c3823ef8849250e146997b2e3.png"
+alt="Image" /> ## 总结 - 更具生物合理性 - 鲁棒性高 - 容易生物交叉 -
+缺乏合适的类脑数据集、算法 - 性能不足，商业化低 - 脑科学认知不足 ##
+超参数进化和蒸馏 现有通用结构：单一神经元，生物仿生性差；
+高维神经元：性能越来越好，鲁棒性越来越好 <img
+src="https://pic4.zhimg.com/80/v2-4c363a169e75bea3c08196e7f3509871.png"
+alt="LIF计算代价低但是生物可信度不高" /> - 超参数过多 ，解决方法： 进化
+- 计算代价大 ，解决方法： 蒸馏</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-9bcae3f8560a457688a56730a6aa32be.png" /></p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-406599a0d369cf75b1183973b9dfc58c.png"
+alt="系统框图" /> ## 相关网站 <a
+target="_blank" rel="noopener" href="https://openreview.net/">审稿人互怼</a> <a
+target="_blank" rel="noopener" href="https://paperswithcode.com/">s</a> <a
+target="_blank" rel="noopener" href="https://poloclub.github.io/cnn-explainer/#article-relu">CNN可视化</a></p>
 
                 
               </div>
@@ -302,13 +348,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Electricity/">#Electricity</a>
-      
-    </div>
-  
 </div>
 
 
@@ -317,20 +356,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>三相电</div>
-      <div>http://example.com/2022/11/08/3xiangdian/</div>
+      <div></div>
+      <div>http://example.com/2022/12/11/SNN/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Alpha</div>
+          <div>John Doe</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月8日</div>
+          <div>2022年12月11日</div>
         </div>
       
       
@@ -362,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/11/SNN/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/02/PWM/" title="PWM">
-                        <span class="hidden-mobile">PWM</span>
+                      <a href="/2022/11/08/3xiangdian/" title="三相电">
+                        <span class="hidden-mobile">三相电</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -427,12 +460,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -647,49 +674,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
