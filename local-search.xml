@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>向chatGPT学习</title>
+    <link href="/2022/12/25/chatGPT/"/>
+    <url>/2022/12/25/chatGPT/</url>
+    
+    <content type="html"><![CDATA[<h1 id="的作用">"." 的作用</h1><blockquote><p>The ./ in ./script.js indicates that the script file is located inthe same directory as the current HTML file. This is known as a relativepath.</p></blockquote><blockquote><p>On the other hand, the / in /script.js indicates that the script fileis located at the root directory of the server. This is known as anabsolute path.</p></blockquote><p>Using a relative path allows you to include a script file that islocated in the same directory as the HTML file, or in a subdirectory ofthat directory. This can be helpful if you want to keep your HTML, CSS,and JavaScript files organized in a logical structure.</p><p>Using an absolute path allows you to include a script file from anylocation on the server, regardless of where the HTML file is located.This can be useful if you want to <strong>reuse a script file inmultiple HTML files</strong>, or if you want to include a script filethat is not located in the same directory as the HTML file.</p><p>It's generally a good idea to use <strong>relative paths</strong>when possible, because they are more portable and easier to maintain. Anabsolute path will only work if the script file is actually located atthe specified location on the server. If you move the HTML file to adifferent location, a relative path will still work as long as thescript file is located in the same relative location. An absolute path,on the other hand, would need to be updated to reflect the new locationof the HTML file.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/2022/12/11/SNN/"/>
     <url>/2022/12/11/SNN/</url>
