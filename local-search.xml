@@ -42,13 +42,19 @@
   
   
   <entry>
-    <title></title>
+    <title>第一次组会</title>
     <link href="/2022/12/11/SNN/"/>
     <url>/2022/12/11/SNN/</url>
     
     <content type="html"><![CDATA[<h1 id="spiking-neural-network-第三代神经网路">Spiking Neural Network第三代神经网路</h1><h2 id="脉冲神经元">脉冲神经元</h2><ul><li>ANN：直接过激活函数</li><li>SNN：不断积累，过阈值之后再输出，然后重置。</li></ul><ol type="1"><li>LIF</li><li>IF</li></ol><p>常被简化成离散计算 不是每时每刻都发放脉冲 ## 低功耗 -ANN：精度高但是功耗大 -SNN：基于<strong>事件触发</strong>的特性与<strong>神经形态</strong>的硬件（TrueNorth、SpiNNaker等）结合，极大降低功耗。如果用GPU、华为昇騰等则不行，功耗会更大。</p><h2 id="鲁棒性">鲁棒性</h2><p><imgsrc="https://pic4.zhimg.com/80/v2-01c62b61bf2426e1a034a48706291b87.png"alt="对输入进行加噪以后，反而得到更好的性能" /> <strong>Why</strong>积分带有<strong>高频滤波</strong>的特性 ## 学习方法 - 有监督 - SurrogateGradient Method（替代梯度 - Time-based Method - BP withSTDP(生物合理性)</p><ul><li>无监督<ul><li>Spike-based EM</li></ul></li><li>奖励学习</li><li>ANN-SNN</li></ul><h3 id="替代梯度">替代梯度</h3><p><imgsrc="https://pic4.zhimg.com/80/v2-43b7d49c3823ef8849250e146997b2e3.png"alt="Image" /> ## 总结 - 更具生物合理性 - 鲁棒性高 - 容易生物交叉 -缺乏合适的类脑数据集、算法 - 性能不足，商业化低 - 脑科学认知不足 ##超参数进化和蒸馏 现有通用结构：单一神经元，生物仿生性差；高维神经元：性能越来越好，鲁棒性越来越好 <imgsrc="https://pic4.zhimg.com/80/v2-4c363a169e75bea3c08196e7f3509871.png"alt="LIF计算代价低但是生物可信度不高" /> - 超参数过多 ，解决方法： 进化- 计算代价大 ，解决方法： 蒸馏</p><p><imgsrc="https://pic4.zhimg.com/80/v2-9bcae3f8560a457688a56730a6aa32be.png" /></p><p><imgsrc="https://pic4.zhimg.com/80/v2-406599a0d369cf75b1183973b9dfc58c.png"alt="系统框图" /> ## 相关网站 <ahref="https://openreview.net/">审稿人互怼</a> <ahref="https://paperswithcode.com/">s</a> <ahref="https://poloclub.github.io/cnn-explainer/#article-relu">CNN可视化</a></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
     
   </entry>
   
@@ -150,25 +156,6 @@
   
   
   <entry>
-    <title>电子线路&amp;电工学1</title>
-    <link href="/2022/10/18/E1/"/>
-    <url>/2022/10/18/E1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="电路基础">电路基础</h1><h2 id="电阻">电阻</h2><h2 id="电容">电容</h2><p><span class="math display">\[U=L\frac{di}{dt}\]</span> <spanclass="math display">\[电流超前电压90^\circ\]</span></p><h2 id="电感">电感</h2><p><span class="math display">\[i=C\frac{du}{dt}\]</span> <spanclass="math display">\[电流滞后电压90^\circ\]</span></p><h2 id="阻抗">阻抗</h2><p><strong><em>相量只是表示正弦量，而不等于正弦量</em></strong> <spanclass="math display">\[\begin{aligned}Z_R&amp;=R\\Z_C&amp;=\frac{1}{j\omega C}&amp;=-j\frac{1}{\omega C}\\Z_L&amp;=j\omega L\\记容抗\\为X_C&amp;=-\frac{1}{\omega C}\\感抗为X_L&amp;=\omega L\\导纳为Y&amp;=\frac{1}{Z}\\\\\end{aligned}\\\]</span> 阻抗是频率的函数<spanclass="math inline">\(Z(j\omega)\)</span><br />可以写成<spanclass="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br /><span class="math inline">\(R\)</span>不仅仅取决于电阻<br /><span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br /><span class="math display">\[X(\omega)&gt;0称感性\]</span></p><p><span class="math display">\[X(\omega)&lt;0称容性\]</span></p><p><span class="math display">\[X(\omega)=0称电阻性\\\]</span></p><h2 id="功率">功率</h2><p><span class="math display">\[\begin{aligned}u(t)&amp;=\sqrt{2}Ucos(\omega t+\theta)\\i(t)&amp;=\sqrt{2}Icos\omegat\\P&amp;=UIcos\theta\\\end{aligned}\\\]</span> <spanclass="math inline">\(\theta\)</span>是阻抗角<br />纯电感和纯电容时为0,表示无能量消耗<br />纯电阻时功率最大 <spanclass="math inline">\(cos\theta\)</span>成为功率因数$<br />当<spanclass="math inline">\(RL\)</span>串联时电源处能量交换的值会变小（部分能量在<spanclass="math inline">\(R\)</span><spanclass="math inline">\(C\)</span>之间消耗<br /><strong>无功功率</strong></p><p><strong>视在功率</strong> <spanclass="math display">\[S=UI=\left|Z\right|I^2\]</span> <spanclass="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Electricity</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>半导体器件</title>
     <link href="/2022/10/18/E3/"/>
     <url>/2022/10/18/E3/</url>
@@ -188,13 +175,38 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2022/10/17/M1/"/>
-    <url>/2022/10/17/M1/</url>
+    <title>电子线路&amp;电工学1</title>
+    <link href="/2022/10/18/E1/"/>
+    <url>/2022/10/18/E1/</url>
     
-    <content type="html"><![CDATA[<h2 id="httpszhuanlan.zhihu.comp589857059">#!https://zhuanlan.zhihu.com/p/589857059</h2><p>title: 材力笔记 date: 2022-10-18 11:00:00 tags: Mechanics author:Alpha math: ture index_img: /img/mindex.jpg banner_img: /img/M.jpg --- #绪论 - 研究对象：强度、刚度、稳定性 -连续性假设、均匀性假设、各向同性假设</p><h2 id="外力分类">外力分类</h2><ul><li>静载荷、动载荷</li><li>应力</li></ul><h2 id="基本概念">基本概念</h2><ul><li><strong>Strain</strong> <span class="math display">\[\begin{align}\varepsilon=\lim_{\Delta x\rightarrow0}\frac{\Delta s}{\Delta x}\end{align} \]</span></li><li>切应变 <span class="math display">\[\begin{align}\gamma=\lim_{ML、MN\rightarrow0}(\frac{\pi}{2}-\angleL&#39;M&#39;N&#39;)\end{align}\]</span></li><li>名义应力(工程应力)</li><li>真实应力</li></ul><h1 id="拉伸压缩">拉伸、压缩</h1><h2 id="method-of-sections">Method of sections</h2><p><strong>Sign convention for axial force</strong></p><ul><li>Tensile force</li><li>Compressive force</li></ul><p><strong>Deformation phenomenon</strong></p><ul><li><p>Plane assumption</p></li><li><p>弹性模量 modulus of elasticity <spanclass="math display">\[\begin{align}E=\frac{\sigma}{\varepsilon}\end{align}\]</span></p></li><li><p><strong>Formula for normal stress</strong> <spanclass="math display">\[\begin{align}\sigma=\frac{F_N}{A}\end{align}\]</span></p></li><li><p>Stress on an inclined plane Mechanical properties of materials inaxial tension and compression</p></li><li><p>Tension diagram</p></li><li><p>Stress-strain diagram</p></li><li><p>塑形材料 Ductile material <span class="math inline">\(\delta\geq5\%\)</span></p></li><li><p>冷却硬化</p><ul><li>Elastic strain<spanclass="math inline">\(\varepsilon_e\)</span></li><li>Plastic strain<spanclass="math inline">\(\varepsilon_p\)</span></li></ul></li><li><p>脆性材料 Brittle material <spanclass="math inline">\(\delta &lt;5\%\)</span></p></li><li><p>比例极限 Proportional limit <spanclass="math inline">\(\sigma_p\)</span></p></li><li><p>卸载定律 Unloading law yielding</p></li><li><p>屈服极限 Yielding Strength <spanclass="math inline">\(\sigma_s\)</span></p></li></ul><p>hardening</p><ul><li>强度极限 Ultimate Strength <spanclass="math inline">\(\sigma_b\)</span></li></ul><p>necking</p><ul><li>伸长率 Percent elongation</li><li>断面收缩率 Percent reduction in area</li><li>蠕变 creeping&amp;relaxation</li></ul><h1 id="axial-deformation">Axial deformation</h1><p><span class="math display">\[\begin{align}\Delta l=\frac{F_Nl}{EA}\end{align}\]</span> <span class="math inline">\(E\)</span> is the<strong><em>modulus of elasticity</em></strong><br />And we call <span class="math inline">\(EA\)</span><strong><em>rigidity</em></strong> - <strong><em>Poisson'sratio</em></strong> <span class="math display">\[\begin{align}\mu=-\frac{\varepsilon&#39;}{\varepsilon}\end{align}\]</span> <span class="math inline">\(\varepsilon&#39;\)</span>is <strong><em>Lateral strain</em></strong></p><ul><li><p><strong><em>Allowable stress</em></strong><spanclass="math inline">\(\left[ \sigma \right]\)</span><br /><span class="math inline">\(\left[ \sigma\right]=\frac{\sigma_u}{n}\)</span><br /><span class="math inline">\(n\)</span> is <strong><em>factor ofsafety</em></strong></p></li><li><p>理论应力集中因数 <strong><em>Stress concentrationfactor</em></strong> <spanclass="math display">\[\begin{align}\kappa=\frac{\sigma_{max}}{\sigma}\end{align}\]</span></p></li><li><p>应变能 <spanclass="math display">\[\begin{align}V&amp;=W=\frac{1}{2}F\Deltal\\&amp;=\frac{F^2l}{2EA}\end{align}\]</span> 多用于难以找几何条件的题目</p></li></ul><h2 id="超静定">超静定</h2><ul><li>列变形协调方程 温度应力和装配应力</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="电路基础">电路基础</h1><h2 id="电阻">电阻</h2><h2 id="电容">电容</h2><p><span class="math display">\[U=L\frac{di}{dt}\]</span> <spanclass="math display">\[电流超前电压90^\circ\]</span></p><h2 id="电感">电感</h2><p><span class="math display">\[i=C\frac{du}{dt}\]</span> <spanclass="math display">\[电流滞后电压90^\circ\]</span></p><h2 id="阻抗">阻抗</h2><p><strong><em>相量只是表示正弦量，而不等于正弦量</em></strong> <spanclass="math display">\[\begin{aligned}Z_R&amp;=R\\Z_C&amp;=\frac{1}{j\omega C}&amp;=-j\frac{1}{\omega C}\\Z_L&amp;=j\omega L\\记容抗\\为X_C&amp;=-\frac{1}{\omega C}\\感抗为X_L&amp;=\omega L\\导纳为Y&amp;=\frac{1}{Z}\\\\\end{aligned}\\\]</span> 阻抗是频率的函数<spanclass="math inline">\(Z(j\omega)\)</span><br />可以写成<spanclass="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br /><span class="math inline">\(R\)</span>不仅仅取决于电阻<br /><span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br /><span class="math display">\[X(\omega)&gt;0称感性\]</span></p><p><span class="math display">\[X(\omega)&lt;0称容性\]</span></p><p><span class="math display">\[X(\omega)=0称电阻性\\\]</span></p><h2 id="功率">功率</h2><p><span class="math display">\[\begin{aligned}u(t)&amp;=\sqrt{2}Ucos(\omega t+\theta)\\i(t)&amp;=\sqrt{2}Icos\omegat\\P&amp;=UIcos\theta\\\end{aligned}\\\]</span> <spanclass="math inline">\(\theta\)</span>是阻抗角<br />纯电感和纯电容时为0,表示无能量消耗<br />纯电阻时功率最大 <spanclass="math inline">\(cos\theta\)</span>成为功率因数$<br />当<spanclass="math inline">\(RL\)</span>串联时电源处能量交换的值会变小（部分能量在<spanclass="math inline">\(R\)</span><spanclass="math inline">\(C\)</span>之间消耗<br /><strong>无功功率</strong></p><p><strong>视在功率</strong> <spanclass="math display">\[S=UI=\left|Z\right|I^2\]</span> <spanclass="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Electricity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>材力笔记</title>
+    <link href="/2022/10/18/M1/"/>
+    <url>/2022/10/18/M1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><ul><li>研究对象：强度、刚度、稳定性</li><li>连续性假设、均匀性假设、各向同性假设</li></ul><h2 id="外力分类">外力分类</h2><ul><li>静载荷、动载荷</li><li>应力</li></ul><h2 id="基本概念">基本概念</h2><ul><li><strong>Strain</strong> <span class="math display">\[\begin{align}\varepsilon=\lim_{\Delta x\rightarrow0}\frac{\Delta s}{\Delta x}\end{align} \]</span></li><li>切应变 <span class="math display">\[\begin{align}\gamma=\lim_{ML、MN\rightarrow0}(\frac{\pi}{2}-\angleL&#39;M&#39;N&#39;)\end{align}\]</span></li><li>名义应力(工程应力)</li><li>真实应力</li></ul><h1 id="拉伸压缩">拉伸、压缩</h1><h2 id="method-of-sections">Method of sections</h2><p><strong>Sign convention for axial force</strong></p><ul><li>Tensile force</li><li>Compressive force</li></ul><p><strong>Deformation phenomenon</strong></p><ul><li><p>Plane assumption</p></li><li><p>弹性模量 modulus of elasticity <spanclass="math display">\[\begin{align}E=\frac{\sigma}{\varepsilon}\end{align}\]</span></p></li><li><p><strong>Formula for normal stress</strong> <spanclass="math display">\[\begin{align}\sigma=\frac{F_N}{A}\end{align}\]</span></p></li><li><p>Stress on an inclined plane Mechanical properties of materials inaxial tension and compression</p></li><li><p>Tension diagram</p></li><li><p>Stress-strain diagram</p></li><li><p>塑形材料 Ductile material <span class="math inline">\(\delta\geq5\%\)</span></p></li><li><p>冷却硬化</p><ul><li>Elastic strain<spanclass="math inline">\(\varepsilon_e\)</span></li><li>Plastic strain<spanclass="math inline">\(\varepsilon_p\)</span></li></ul></li><li><p>脆性材料 Brittle material <spanclass="math inline">\(\delta &lt;5\%\)</span></p></li><li><p>比例极限 Proportional limit <spanclass="math inline">\(\sigma_p\)</span></p></li><li><p>卸载定律 Unloading law yielding</p></li><li><p>屈服极限 Yielding Strength <spanclass="math inline">\(\sigma_s\)</span></p></li></ul><p>hardening</p><ul><li>强度极限 Ultimate Strength <spanclass="math inline">\(\sigma_b\)</span></li></ul><p>necking</p><ul><li>伸长率 Percent elongation</li><li>断面收缩率 Percent reduction in area</li><li>蠕变 creeping&amp;relaxation</li></ul><h1 id="axial-deformation">Axial deformation</h1><p><span class="math display">\[\begin{align}\Delta l=\frac{F_Nl}{EA}\end{align}\]</span> <span class="math inline">\(E\)</span> is the<strong><em>modulus of elasticity</em></strong><br />And we call <span class="math inline">\(EA\)</span><strong><em>rigidity</em></strong> - <strong><em>Poisson'sratio</em></strong> <span class="math display">\[\begin{align}\mu=-\frac{\varepsilon&#39;}{\varepsilon}\end{align}\]</span> <span class="math inline">\(\varepsilon&#39;\)</span>is <strong><em>Lateral strain</em></strong></p><ul><li><p><strong><em>Allowable stress</em></strong><spanclass="math inline">\(\left[ \sigma \right]\)</span><br /><span class="math inline">\(\left[ \sigma\right]=\frac{\sigma_u}{n}\)</span><br /><span class="math inline">\(n\)</span> is <strong><em>factor ofsafety</em></strong></p></li><li><p>理论应力集中因数 <strong><em>Stress concentrationfactor</em></strong> <spanclass="math display">\[\begin{align}\kappa=\frac{\sigma_{max}}{\sigma}\end{align}\]</span></p></li><li><p>应变能 <spanclass="math display">\[\begin{align}V&amp;=W=\frac{1}{2}F\Deltal\\&amp;=\frac{F^2l}{2EA}\end{align}\]</span> 多用于难以找几何条件的题目</p></li></ul><h2 id="超静定">超静定</h2><ul><li>列变形协调方程 温度应力和装配应力</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Mechanics</tag>
+      
+    </tags>
     
   </entry>
   
