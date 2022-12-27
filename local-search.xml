@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>nvidia-smi</title>
+    <link href="/2022/12/27/nvidia-smi/"/>
+    <url>/2022/12/27/nvidia-smi/</url>
+    
+    <content type="html"><![CDATA[<h1 id="nvidia-smi"><code>nvidia-smi</code></h1><p><img src="/img/ResNet.png" alt="训练ResNet" /> 训练时可以通过<code>nvidia-smi</code>命令查看cuda版本信息和GPU使用情况 <imgsrc="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p><p><code>GPU</code>：GPU编号，多块显卡会从0开始编号，图中GPU编号为<code>0</code></p><p><code>Name</code>：GPU类型，图中GPU类型为<code>NVIDIA GeForce ...</code></p><p><code>Fan</code>：风扇转速</p><p><code>Temp</code>：GPU温度，图中GPU温度为 <code>62℃</code></p><p><code>Perf</code>：GPU性能状态，P0为最大性能，P12为最小性能，图中GPU性能状态为<code>P0</code></p><p><code>Pwr:Usager/Cap</code>：能耗，<code>Usage</code>：使用量，<code>Cap</code>：总量，图中能耗使用量为</p><p><code>Bus-Id</code>：GPU总线相关</p><p><code>Disp.A</code>：GPU的显示是否初始化，图中为 Off</p><p><code>Memory-Usage</code>：显存使用率，图中显存使用率为 3984Mib /6144Mib</p><p><code>Volatile GPU-Util</code>：GPU使用率，图中GPU使用率为 89%</p><p><code>Uncorr. ECC</code>：ECC相关</p><p><code>Compute M</code>：计算模式，图中计算模式为<code>DEFAULT</code></p><p><code>Processes</code>：显示每个进程占用的显存使用率、进程号、占用的<code>GPU</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>向chatGPT学习</title>
     <link href="/2022/12/25/chatGPT/"/>
     <url>/2022/12/25/chatGPT/</url>
