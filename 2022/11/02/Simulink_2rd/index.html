@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="nvidia-smi  训练时可以通过 nvidia-smi命令查看cuda版本信息和GPU使用情况  GPU：GPU编号，多块显卡会从0开始编号，图中GPU编号为 0 Name：GPU类型，图中GPU类型为 NVIDIA GeForce ... Fan：风扇转速 Temp：GPU温度，图中GPU温度为 62℃ Perf：GPU性能状态，P0为最大性能，P12为最小性能，图中GP">
+    <meta name="description" content="Simulink 2阶系统模拟 \[F=ma\] Vibration 振动   弹簧和阻尼器构成的二阶系统  \[\ddot x+\frac{B}{m}\dot x+\frac{k}{m}x=F\] \[ \left\{ \begin{aligned} &amp;amp;\text{Natural Frequency}&amp;amp;\omega_n &amp;amp; =  \sqrt{\frac">
   
   
   
-  <title>nvidia-smi - Hexo</title>
+  <title>Simulink 2阶系统模拟 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/2077.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="nvidia-smi"></span>
+            <span id="subtitle" data-typed-text="Simulink 2阶系统模拟"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-27 11:00" pubdate>
-          2022年12月27日 上午
+        <time datetime="2022-11-02 11:00" pubdate>
+          2022年11月2日 上午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          424 字
+          585 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -287,33 +287,63 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">nvidia-smi</h1>
+            <h1 style="display: none">Simulink 2阶系统模拟</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="nvidia-smi"><code>nvidia-smi</code></h1>
-<p><img src="/img/ResNet.png" alt="训练ResNet" /> 训练时可以通过
-<code>nvidia-smi</code>命令查看cuda版本信息和GPU使用情况 <img
-src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
-<p><code>GPU</code>：GPU编号，多块显卡会从0开始编号，图中GPU编号为
-<code>0</code></p>
-<p><code>Name</code>：GPU类型，图中GPU类型为
-<code>NVIDIA GeForce ...</code></p>
-<p><code>Fan</code>：风扇转速</p>
-<p><code>Temp</code>：GPU温度，图中GPU温度为 <code>62℃</code></p>
-<p><code>Perf</code>：GPU性能状态，P0为最大性能，P12为最小性能，图中GPU性能状态为
-<code>P0</code></p>
-<p><code>Pwr:Usager/Cap</code>：能耗，<code>Usage</code>：使用量，<code>Cap</code>：总量，图中能耗使用量为</p>
-<p><code>Bus-Id</code>：GPU总线相关</p>
-<p><code>Disp.A</code>：GPU的显示是否初始化，图中为 Off</p>
-<p><code>Memory-Usage</code>：显存使用率，图中显存使用率为 3984Mib /
-6144Mib</p>
-<p><code>Volatile GPU-Util</code>：GPU使用率，图中GPU使用率为 89%</p>
-<p><code>Uncorr. ECC</code>：ECC相关</p>
-<p><code>Compute M</code>：计算模式，图中计算模式为
-<code>DEFAULT</code></p>
-<p><code>Processes</code>：显示每个进程占用的显存使用率、进程号、占用的<code>GPU</code></p>
+                <h1 id="simulink-2阶系统模拟">Simulink 2阶系统模拟</h1>
+<p><span class="math display">\[F=ma\]</span></p>
+<h2 id="vibration-振动">Vibration 振动</h2>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-9b4627bdff4004bae146408bef70dcde.png"
+alt="弹簧和阻尼器构成的二阶系统" />
+<figcaption aria-hidden="true">弹簧和阻尼器构成的二阶系统</figcaption>
+</figure>
+<p><span class="math display">\[\ddot x+\frac{B}{m}\dot
+x+\frac{k}{m}x=F\]</span> <span class="math display">\[ \left\{
+\begin{aligned}
+&amp;\text{Natural Frequency}&amp;\omega_n &amp; =  \sqrt{\frac{k}{m}}
+\\
+&amp;\text{Damping ratio}&amp;\zeta &amp; =  \frac{B}{\sqrt{2km}} \\
+\end{aligned}
+\right.
+\]</span> <span class="math display">\[ \text{Initial condition}\left\{
+\begin{aligned}
+&amp;F=0\\
+&amp;x(0)=x_0\\
+&amp;\dot x(0)=\dot x_0
+\end{aligned}
+\right.
+\]</span></p>
+<p>得到： <span class="math display">\[\ddot x+2\zeta\omega_n \dot
+x+\omega_n^2x=0\]</span></p>
+<h2 id="simulink">Simulink</h2>
+<p><span class="math display">\[ \text{setting}\left\{
+\begin{aligned}
+&amp;\ddot x=-2\zeta\omega_n \dot x-\omega_n^2x\\
+&amp;x(0)=5\\
+&amp;\dot x(0)=0
+\end{aligned}
+\right.
+\]</span> <img
+src="https://pic4.zhimg.com/80/v2-5540159bad48ca5faa1dc786af51d57e.png"
+alt="simulink 建模" /> # 不同<span
+class="math inline">\(\zeta\)</span>下的响应曲线 <img
+src="https://pic4.zhimg.com/80/v2-83ea686aa3d5282d0164ac49e9d6419d.png"
+alt="3" /> <img
+src="https://pic4.zhimg.com/80/v2-b2cfe50aaf007aaf84de6b891631ad6b.png"
+alt="1" /> <img
+src="https://pic4.zhimg.com/80/v2-33ea600fe5b1d516bf55dac12d665358.png"
+alt="0.1" /></p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-b0fc186a5f3370f7cc1974d65dc002b3.png"
+alt="0" /> <img
+src="https://pic4.zhimg.com/80/v2-75a1e0ec6a971755099785d4ba5358e7.png"
+alt="-0.5" /> <img
+src="https://pic4.zhimg.com/80/v2-5de0aa37e8bac5bea94108f4c3a99a3c.png"
+alt="-3" /></p>
 
                 
               </div>
@@ -326,7 +356,7 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/CS/">#CS</a>
+        <a href="/tags/Control/">#Control</a>
       
     </div>
   
@@ -338,8 +368,8 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>nvidia-smi</div>
-      <div>http://example.com/2022/12/27/nvidia-smi/</div>
+      <div>Simulink 2阶系统模拟</div>
+      <div>http://example.com/2022/11/02/Simulink_2rd/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +381,7 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月27日</div>
+          <div>2022年11月2日</div>
         </div>
       
       
@@ -383,9 +413,9 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/30/data/" title="数据预处理">
+                      <a href="/2022/11/02/PWM/" title="PWM">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据预处理</span>
+                        <span class="hidden-mobile">PWM</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -393,8 +423,8 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/25/chatGPT/" title="向chatGPT学习">
-                        <span class="hidden-mobile">向chatGPT学习</span>
+                      <a href="/2022/10/31/Laplace/" title="Laplace">
+                        <span class="hidden-mobile">Laplace</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -448,6 +478,12 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -662,6 +698,49 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

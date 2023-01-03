@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="nvidia-smi  训练时可以通过 nvidia-smi命令查看cuda版本信息和GPU使用情况  GPU：GPU编号，多块显卡会从0开始编号，图中GPU编号为 0 Name：GPU类型，图中GPU类型为 NVIDIA GeForce ... Fan：风扇转速 Temp：GPU温度，图中GPU温度为 62℃ Perf：GPU性能状态，P0为最大性能，P12为最小性能，图中GP">
+    <meta name="description" content="数据操作 大小 1x.shape 1x.numel() ## 整形、融合 123X = torch.arange(12, dtype=torch.float32).reshape((3,4))Y = torch.tensor([[2.0, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])torch.cat((X, Y), dim=0), torch.cat((X,">
   
   
   
-  <title>nvidia-smi - Hexo</title>
+  <title>数据预处理 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="nvidia-smi"></span>
+            <span id="subtitle" data-typed-text="数据预处理"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-27 11:00" pubdate>
-          2022年12月27日 上午
+        <time datetime="2022-12-30 11:00" pubdate>
+          2022年12月30日 上午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          424 字
+          1.2k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          11 分钟
         
       </span>
     
@@ -287,33 +287,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">nvidia-smi</h1>
+            <h1 style="display: none">数据预处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="nvidia-smi"><code>nvidia-smi</code></h1>
-<p><img src="/img/ResNet.png" alt="训练ResNet" /> 训练时可以通过
-<code>nvidia-smi</code>命令查看cuda版本信息和GPU使用情况 <img
-src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
-<p><code>GPU</code>：GPU编号，多块显卡会从0开始编号，图中GPU编号为
-<code>0</code></p>
-<p><code>Name</code>：GPU类型，图中GPU类型为
-<code>NVIDIA GeForce ...</code></p>
-<p><code>Fan</code>：风扇转速</p>
-<p><code>Temp</code>：GPU温度，图中GPU温度为 <code>62℃</code></p>
-<p><code>Perf</code>：GPU性能状态，P0为最大性能，P12为最小性能，图中GPU性能状态为
-<code>P0</code></p>
-<p><code>Pwr:Usager/Cap</code>：能耗，<code>Usage</code>：使用量，<code>Cap</code>：总量，图中能耗使用量为</p>
-<p><code>Bus-Id</code>：GPU总线相关</p>
-<p><code>Disp.A</code>：GPU的显示是否初始化，图中为 Off</p>
-<p><code>Memory-Usage</code>：显存使用率，图中显存使用率为 3984Mib /
-6144Mib</p>
-<p><code>Volatile GPU-Util</code>：GPU使用率，图中GPU使用率为 89%</p>
-<p><code>Uncorr. ECC</code>：ECC相关</p>
-<p><code>Compute M</code>：计算模式，图中计算模式为
-<code>DEFAULT</code></p>
-<p><code>Processes</code>：显示每个进程占用的显存使用率、进程号、占用的<code>GPU</code></p>
+                <h1 id="数据操作">数据操作</h1>
+<h2 id="大小">大小</h2>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.shape<br></code></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.numel()<br></code></pre></td></tr></table></figure> ## 整形、融合 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">X = torch.arange(<span class="hljs-number">12</span>, dtype=torch.float32).reshape((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))<br>Y = torch.tensor([[<span class="hljs-number">2.0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]])<br>torch.cat((X, Y), dim=<span class="hljs-number">0</span>), torch.cat((X, Y), dim=<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure> out:
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">(tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>],<br>         [ <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]),<br> tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]))<br></code></pre></td></tr></table></figure> # 数据预处理 ## 创建csv</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br>os.makedirs(os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>), exist_ok=<span class="hljs-literal">True</span>)<br>data_file = os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-string">&#x27;house_tiny.csv&#x27;</span>)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(data_file, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(<span class="hljs-string">&#x27;NumRooms,Alley,Price\n&#x27;</span>)  <span class="hljs-comment"># 列名</span><br>    f.write(<span class="hljs-string">&#x27;NA,Pave,127500\n&#x27;</span>)  <span class="hljs-comment"># 每行表示一个数据样本</span><br>    f.write(<span class="hljs-string">&#x27;2,NA,106000\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;4,NA,178100\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;NA,NA,140000\n&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="读取数据集">读取数据集</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><br>data = pd.read_csv(data_file)<br><span class="hljs-built_in">print</span>(data)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms Alley   Price<br><span class="hljs-number">0</span>       NaN  Pave  <span class="hljs-number">127500</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>   NaN  <span class="hljs-number">106000</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>   NaN  <span class="hljs-number">178100</span><br><span class="hljs-number">3</span>       NaN   NaN  <span class="hljs-number">140000</span><br></code></pre></td></tr></table></figure>
+<h2 id="处理缺失值">处理缺失值</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs, outputs = data.iloc[:, <span class="hljs-number">0</span>:<span class="hljs-number">2</span>], data.iloc[:, <span class="hljs-number">2</span>]<span class="hljs-comment"># 前两列是input，最后一列是output</span><br>inputs = inputs.fillna(inputs.mean())<span class="hljs-comment"># 填充NAN的值</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure>
+<h2 id="独热编码-one-hot-encoding">独热编码 one-hot encoding</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs = pd.get_dummies(inputs, dummy_na=<span class="hljs-literal">True</span>)<span class="hljs-comment"># dummt_na给NAN也设一个特征列</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms  Alley_Pave  Alley_nan<br><span class="hljs-number">0</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">1</span>          <span class="hljs-number">0</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">3</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>单列的文本数据变成了两个特征</p>
+</blockquote>
 
                 
               </div>
@@ -338,8 +332,8 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>nvidia-smi</div>
-      <div>http://example.com/2022/12/27/nvidia-smi/</div>
+      <div>数据预处理</div>
+      <div>http://example.com/2022/12/30/data/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +345,7 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月27日</div>
+          <div>2022年12月30日</div>
         </div>
       
       
@@ -383,9 +377,9 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/30/data/" title="数据预处理">
+                      <a href="/2022/12/30/NN1/" title="神经网络基础">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据预处理</span>
+                        <span class="hidden-mobile">神经网络基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -393,8 +387,8 @@ src="/img/nvidia-smi.png" alt="训练ResNet时的情况" /></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/25/chatGPT/" title="向chatGPT学习">
-                        <span class="hidden-mobile">向chatGPT学习</span>
+                      <a href="/2022/12/27/nvidia-smi/" title="nvidia-smi">
+                        <span class="hidden-mobile">nvidia-smi</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

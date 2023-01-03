@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          2.8k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          10 分钟
+          24 分钟
         
       </span>
     
@@ -320,6 +320,15 @@ different location, a relative path will still work as long as the
 script file is located in the same relative location. An absolute path,
 on the other hand, would need to be updated to reflect the new location
 of the HTML file.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ..\```返回上一级"><br># **f-string,timer**<br>## f-string<br>```f&#x27;&#123;timer.stop():.2f&#125; sec&#x27;```<br><br>```f&#x27;```前缀是一种特殊字符串字面量，称为“f-strings”（也称为“格式化字符串字面量”）。它允许在字符串内嵌入表达式，并使用大括号将表达式包装起来。这种字符串字面量通常用于格式化字符串。<br><br>例如，假设有一个变量name和一个变量age，分别存储用户的名字和年龄。你可以使用f-strings将这些值插入字符串中，如下所示：<br><br>```python<br>name = &quot;Alice&quot;<br>age = 30<br>greeting = f&quot;Hello, &#123;name&#125;! You are &#123;age&#125; years old.&quot;<br>print(greeting)  <br># Output: &quot;Hello, Alice! You are 30 years old.&quot;<br></code></pre></td></tr></table></figure>
+<p>在这个例子中，f-string中的两个大括号内分别包含了name和age变量。这些表达式在运行时被求值，并将结果插入字符串中。</p>
+<p>你还可以使用格式说明符来控制表达式的输出格式。例如，你可以在表达式前面加上一个冒号和格式说明符，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">value = <span class="hljs-number">123.456</span><br>formatted_value = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;value:<span class="hljs-number">.2</span>f&#125;</span>&quot;</span><br><span class="hljs-built_in">print</span>(formatted_value)  <span class="hljs-comment"># Output: &quot;123.46&quot;</span><br></code></pre></td></tr></table></figure>
+<p>在这个例子中，<code>.2f</code>格式说明符指定了值应格式化为具有2个小数位的浮点数。这将输出浮点数的值，并将其保留到2个小数位。</p>
+<h2 id="timer">timer</h2>
+<p><figure class="highlight plaintext"><figcaption><span>is a function that returns a value, and ```:.2f``` is a format specifier that specifies how the returned value should be formatted as a string. The ```:``` indicates the start of the format specifier, ```.2f``` specifies that the value should be formatted as a floating-point number with 2 decimal places, and ```sec``` is a string that is appended to the end of the formatted value.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs timer.stop()```"><br> ```timer.stop()```是一个返回值的函数，而```:.2f```是一个格式说明符，指定返回值应如何格式化为字符串。```:```表示格式说明符的开头，```.2f```指定值应格式化为具有2个小数位的浮点数，而```sec```是一个字符串，该字符串追加到格式化值的末尾。<br><br>Here&#x27;s an example of how you could use this line of code:<br><br>```python<br>import time<br><br>class Timer:<br>    def __init__(self):<br>        self.start_time = time.perf_counter()<br><br>    def stop(self):<br>        return time.perf_counter() - self.start_time<br><br>timer = Timer()<br># Do some work here<br>elapsed_time = timer.stop()<br>print(f&#x27;&#123;elapsed_time:.2f&#125; sec&#x27;)<br></code></pre></td></tr></table></figure> This would print the elapsed time in seconds with 2
+decimal places. For example, if the elapsed time was 1.2345 seconds, the
+output would be 1.23 sec.</p>
 
                 
               </div>
