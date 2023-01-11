@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="减肥模型  在Varying Transfer Function里面调积分值可调初始值    框图    结果  P控制 这个模型里是不是可以把这个Kp看成一个“决心因子”或者“自控因子”，Kp越大，表示你减小差距的愿望越强烈，采取的行动越多。根据系统的根我们知道Kp+10α两个参数共同影响着体重的输出结果。 - Kp&amp;gt;-13时是当你的决心Kp在代谢率系数10">
+    <meta name="description" content="减肥模型  在Varying Transfer Function里面调积分值可调初始值    框图    结果  P控制 这个模型里是不是可以把这个Kp看成一个“决心因子”或者“自控因子”，Kp越大，表示你减小差距的愿望越强烈，采取的行动越多。根据系统的根我们知道Kp+10α两个参数共同影响着体重的输出结果。  Kp&amp;gt;-13时是当你的决心Kp在代谢率系数10α">
   
   
   
-  <title>Simulink 2阶系统模拟 - Hexo</title>
+  <title>Simulink 控制器 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Simulink 2阶系统模拟"></span>
+            <span id="subtitle" data-typed-text="Simulink 控制器"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-03 17:23" pubdate>
-          2023年1月3日 下午
+        <time datetime="2023-01-11 17:23" pubdate>
+          2023年1月11日 下午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          451 字
+          445 字
         
       </span>
     
@@ -287,7 +287,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Simulink 2阶系统模拟</h1>
+            <h1 style="display: none">Simulink 控制器</h1>
             
             
               <div class="markdown-body">
@@ -310,27 +310,33 @@ alt="结果" />
 <figcaption aria-hidden="true">结果</figcaption>
 </figure>
 <h2 id="p控制">P控制</h2>
-<p>这个模型里是不是可以把这个<code>Kp</code>看成一个“决心因子”或者“自控因子”，<code>Kp</code>越大，表示你减小差距的愿望越强烈，采取的行动越多。根据系统的根我们知道<code>Kp+10α</code>两个参数共同影响着体重的输出结果。
--
-<code>Kp</code>&gt;-13时是当你的决心<code>Kp</code>在代谢率系数10α的承受范围内，，体重总是可控的，而且愿望越强烈，就能越快达到目标。
--
-<code>Kp</code>&gt;0说明你比较节制，只要体重超过预期，就会采取行动减肥<img
+<p>这个模型里是不是可以把这个<code>Kp</code>看成一个“决心因子”或者“自控因子”，<code>Kp</code>越大，表示你减小差距的愿望越强烈，采取的行动越多。根据系统的根我们知道<code>Kp+10α</code>两个参数共同影响着体重的输出结果。</p>
+<ul>
+<li><p><code>Kp</code>&gt;-13时是当你的决心<code>Kp</code>在代谢率系数10α的承受范围内，，体重总是可控的，而且愿望越强烈，就能越快达到目标。</p></li>
+<li><p><code>Kp</code>&gt;0说明你比较节制，只要体重超过预期，就会采取行动减肥<img
 src="https://pic4.zhimg.com/80/v2-4ff582b4ffec791270e37b8e0d98e08d.png"
-alt="kp=200" />； - <code>Kp</code>=0说明you just dont
+alt="kp=200" />；</p></li>
+<li><p><code>Kp</code>=0说明you just dont
 care，不会因为体重和预期有差距而产生任何行动，任由干扰项身体代谢率 do
-the job， -
-<code>Kp</code>&lt;0（比如-5）说明你就算体重超过预期仍然快乐养膘，这时只要你的快乐程度没有战胜基础代谢率（系统自身的稳定性储备），那么体重虽然慢但仍然早晚可以依靠自然代谢率降下来
+the job</p></li>
+<li><p><code>Kp</code>&lt;0（比如-5）说明你就算体重超过预期仍然快乐养膘，这时只要你的快乐程度没有战胜基础代谢率（系统自身的稳定性储备），那么体重虽然慢但仍然早晚可以依靠自然代谢率降下来
 <img
 src="https://pic4.zhimg.com/80/v2-2b01fbf56efd1b902b6ce489c305f9ac.png"
-alt="kp=-5" /> -
-<code>Kp</code>&lt;-13，身体代谢率也救不了你的时候，你的体重就会疯狂爆炸。<img
+alt="kp=-5" /></p></li>
+<li><p><code>Kp</code>&lt;-13，身体代谢率也救不了你的时候，你的体重就会疯狂爆炸。<img
 src="https://pic4.zhimg.com/80/v2-6f84e3512fb73a9bd0f05f2a3d1024c1.png"
-alt="kp=-100" /></p>
+alt="kp=-100" /></p></li>
+</ul>
 <blockquote>
-<p>会发现仍存在<strong>steady state error</strong> ## PI 控制 <img
-src="https://pic4.zhimg.com/80/v2-1b947fc2cfe71fe604d9170f889951cc.png"
-alt="框图" /></p>
+<p>会发现仍存在<strong>steady state error</strong></p>
 </blockquote>
+<h2 id="pi-控制">PI 控制</h2>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-1b947fc2cfe71fe604d9170f889951cc.png"
+alt="框图" />
+<figcaption aria-hidden="true">框图</figcaption>
+</figure>
 <figure>
 <img
 src="https://pic4.zhimg.com/80/v2-e46967fe705689770742b60324ecb2d0.png"
@@ -361,8 +367,8 @@ alt="结果" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Simulink 2阶系统模拟</div>
-      <div>http://example.com/2023/01/03/Simulink_calorie/</div>
+      <div>Simulink 控制器</div>
+      <div>http://example.com/2023/01/11/Simulink_calorie/</div>
     </div>
     <div class="license-meta">
       
@@ -374,7 +380,7 @@ alt="结果" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月3日</div>
+          <div>2023年1月11日</div>
         </div>
       
       
@@ -406,18 +412,12 @@ alt="结果" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/03/Simulink_2rd/" title="Simulink 2阶系统模拟">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Simulink 2阶系统模拟</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/NN2/" title="正则化">
-                        <span class="hidden-mobile">正则化</span>
+                      <a href="/2023/01/09/kaggle/" title="kaggle">
+                        <span class="hidden-mobile">kaggle</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
