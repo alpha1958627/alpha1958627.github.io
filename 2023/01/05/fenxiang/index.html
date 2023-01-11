@@ -13,14 +13,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Alpha">
+  <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="电路基础 电阻 电容 \[U=L\frac{di}{dt}\] \[电流超前电压90^\circ\] 电感 \[i=C\frac{du}{dt}\] \[电流滞后电压90^\circ\] 阻抗 相量只是表示正弦量，而不等于正弦量 \[ \begin{aligned} Z_R&amp;amp;=R \\Z_C &amp;amp;=\frac{1}{j\omega C} &amp;amp;=-j\fr">
+    <meta name="description" content="问题程序 看不懂的代码，扔进来等GPT 123456789101112131415161718192021222324252627class Accumulator:  #@save这里也看不懂    &amp;quot;&amp;quot;&amp;quot;在n个变量上累加&amp;quot;&amp;quot;&amp;quot;    def __init__(self, n):        self.data = [0.0] *">
   
   
   
-  <title>电子线路&amp;电工学1 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/aa.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="电子线路&amp;电工学1"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -212,14 +212,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Alpha
+        John Doe
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-18 11:00" pubdate>
-          2022年10月18日 上午
+        <time datetime="2023-01-05 22:25" pubdate>
+          2023年1月5日 晚上
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          741 字
+          1.7k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          7 分钟
+          15 分钟
         
       </span>
     
@@ -287,61 +287,49 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">电子线路&amp;电工学1</h1>
+            <h1 style="display: none"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="电路基础">电路基础</h1>
-<h2 id="电阻">电阻</h2>
-<h2 id="电容">电容</h2>
-<p><span class="math display">\[U=L\frac{di}{dt}\]</span> <span
-class="math display">\[电流超前电压90^\circ\]</span></p>
-<h2 id="电感">电感</h2>
-<p><span class="math display">\[i=C\frac{du}{dt}\]</span> <span
-class="math display">\[电流滞后电压90^\circ\]</span></p>
-<h2 id="阻抗">阻抗</h2>
-<p><strong><em>相量只是表示正弦量，而不等于正弦量</em></strong> <span
-class="math display">\[
-\begin{aligned}
-Z_R&amp;=R
-\\Z_C
-&amp;=\frac{1}{j\omega C}
-&amp;=-j\frac{1}{\omega C}\\
-Z_L&amp;=j\omega L\\
-记容抗\\为X_C&amp;=-\frac{1}{\omega C}\\
-感抗为X_L&amp;=\omega L\\
-导纳为Y&amp;=\frac{1}{Z}\\\\
-\end{aligned}\\
-\]</span> 阻抗是频率的函数<span
-class="math inline">\(Z(j\omega)\)</span><br />
-可以写成<span
-class="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br />
-<span class="math inline">\(R\)</span>不仅仅取决于电阻<br />
-<span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br />
-<span class="math display">\[
-X(\omega)&gt;0称感性\]</span></p>
-<p><span class="math display">\[X(\omega)&lt;0称容性\]</span></p>
-<p><span class="math display">\[X(\omega)=0称电阻性\\\]</span></p>
-<h2 id="功率">功率</h2>
-<p><span class="math display">\[
-\begin{aligned}
-u(t)&amp;=\sqrt{2}Ucos(\omega t+\theta)\\i(t)&amp;=\sqrt{2}Icos\omega
-t\\
-P&amp;=UIcos\theta\\
-\end{aligned}\\\]</span> <span
-class="math inline">\(\theta\)</span>是阻抗角<br />
-纯电感和纯电容时为0,表示无能量消耗<br />
-纯电阻时功率最大 <span
-class="math inline">\(cos\theta\)</span>成为功率因数$<br />
-当<span
-class="math inline">\(RL\)</span>串联时电源处能量交换的值会变小（部分能量在<span
-class="math inline">\(R\)</span><span
-class="math inline">\(C\)</span>之间消耗<br />
-<strong>无功功率</strong></p>
-<p><strong>视在功率</strong> <span
-class="math display">\[S=UI=\left|Z\right|I^2\]</span> <span
-class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
+                <h1 id="问题程序">问题程序</h1>
+<p>看不懂的代码，扔进来等GPT</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Accumulator</span>:  <span class="hljs-comment">#@save这里也看不懂</span><br>    <span class="hljs-string">&quot;&quot;&quot;在n个变量上累加&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, n</span>):<br>        self.data = [<span class="hljs-number">0.0</span>] * n<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, *args</span>):<br>        self.data = [a + <span class="hljs-built_in">float</span>(b) <span class="hljs-keyword">for</span> a, b <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(self.data, args)] <span class="hljs-comment">#这里</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">reset</span>(<span class="hljs-params">self</span>):<br>        self.data = [<span class="hljs-number">0.0</span>] * <span class="hljs-built_in">len</span>(self.data)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self, idx</span>):<br>        <span class="hljs-keyword">return</span> self.data[idx]<br><br><span class="hljs-comment"># -----------------------</span><br> <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span>) % (num_batches // <span class="hljs-number">5</span>) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> i == num_batches - <span class="hljs-number">1</span>:<br>                animator.add(epoch + (i + <span class="hljs-number">1</span>) / num_batches,<br>                             (train_l, train_acc, <span class="hljs-literal">None</span>))<br>        test_acc = evaluate_accuracy_gpu(net, test_iter)<br>        animator.add(epoch + <span class="hljs-number">1</span>, (<span class="hljs-literal">None</span>, <span class="hljs-literal">None</span>, test_acc))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;loss <span class="hljs-subst">&#123;train_l:<span class="hljs-number">.3</span>f&#125;</span>, train acc <span class="hljs-subst">&#123;train_acc:<span class="hljs-number">.3</span>f&#125;</span>, &#x27;</span><br>          <span class="hljs-string">f&#x27;test acc <span class="hljs-subst">&#123;test_acc:<span class="hljs-number">.3</span>f&#125;</span>&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;metric[<span class="hljs-number">2</span>] * num_epochs / timer.<span class="hljs-built_in">sum</span>():<span class="hljs-number">.1</span>f&#125;</span> examples/sec &#x27;</span><br>          <span class="hljs-string">f&#x27;on <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(device)&#125;</span>&#x27;</span>)<br><br><br></code></pre></td></tr></table></figure>
+<h1 id="section">2</h1>
+<p>之前我想先简单地分享一下电磁学小论文的内容，它是关于磁流体的一些研究，我觉得磁流体也是一个很有意思的东西</p>
+<p>除此以外他还有很多应用 比如微机器人</p>
+<p>在医学领域可以帮助我们诊断治疗疾病，还可以进行药物运输，比如下面给大家展示的这两项工作，这些微机器人能够实现一些实用的动作</p>
+<p>他们都可以有希望实现对药物的运输</p>
+<p>我觉得这些工作还是很有应用前景的</p>
+<p>然后我当时的想法是先从最简单的情况探索一下磁流体的外形和磁场之间关系的机理</p>
+<h1 id="section-1">3</h1>
+<p>我想先给大家介绍一下数据和物理的关系，在下面这张图可以清楚的看到，比如我们的传统的机器学习，像手写数字识别、房价预测这些任务下</p>
+<p>我们通过数据来训练模型，然后输入数据通过模型得到输出，没有用太多的物理知识</p>
+<p>而另一方面就是纯物理的问题，比如刚刚我提到的，通过公式推导等等用物理知识和物理信息来解决问题</p>
+<p>然后这两者交界就是一些数据驱动的解决方法，其中就包括今天要介绍的PINN</p>
+<p>我们传统的纯物理的</p>
+<h2 id="数据驱动">数据驱动</h2>
+<p>优势不需要那么多的物理信息</p>
+<p>值得一提的是流体力学里</p>
+<p>所以我觉得通过机器学习对流体力学里的这些大数据进行挖掘也是能体现机器学习优势的一个有意义的方向</p>
+<p>根据边界条件和解的一些性质去改变网络的结构</p>
+<p>其实归纳偏置也不是局限于物理学习神经网络的一个概念</p>
+<p>在经典的深度学习中，比如在识别图片的任务里我们作出的<strong>局部性</strong>和<strong>空间不变性</strong>的假设</p>
+<p>然后我们通过kernel权重共享
+来改变传统的全连接神经网络，也是属于归纳偏置或者也可以称为偏好的一种</p>
+<p>又比如我们希望数据有噪声的时候我们会选择丢弃法，或者加入一些正则项</p>
+<p>万一想他是有噪声的或者出兵时甚至有有些噪声，这种方法是可以直接去运用。
+不需要做任何处理，而且最后的效果在招生。
+即使到5%，甚至到10%，10%的时候，仍然能取得比较好效果，只要部队在训练过程中对神经网络进行一些一些政策，像第二个好处就是，</p>
+<h1 id="总结">总结</h1>
+<p>由于模型是数据驱动的，因此，模型的
+性能在本质上是由所选取的训练数据决定的，模型往
+往在那些与训练数据差异较大的预测数据中表现较
+差。这就要求研究者谨慎地选取模型构建对象和方
+法以尽量提高模型的泛化能力。</p>
+<p>如何有机结合 现有流体力学知识和大数据，来提高
+智能模型的可解释性，进一步探索流体力学更加
+基本的物理内涵和科学认知。</p>
 
                 
               </div>
@@ -351,13 +339,6 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Electricity/">#Electricity</a>
-      
-    </div>
-  
 </div>
 
 
@@ -366,20 +347,20 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>电子线路&amp;电工学1</div>
-      <div>http://example.com/2022/10/18/E1/</div>
+      <div></div>
+      <div>http://example.com/2023/01/05/fenxiang/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Alpha</div>
+          <div>John Doe</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月18日</div>
+          <div>2023年1月5日</div>
         </div>
       
       
@@ -411,9 +392,9 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/18/E3/" title="半导体器件">
+                      <a href="/2023/01/09/kaggle/" title="kaggle">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">半导体器件</span>
+                        <span class="hidden-mobile">kaggle</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -421,8 +402,8 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/18/M1/" title="材力笔记">
-                        <span class="hidden-mobile">材力笔记</span>
+                      <a href="/2023/01/04/pinn/" title="PINN">
+                        <span class="hidden-mobile">PINN</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -476,12 +457,6 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -696,49 +671,6 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
