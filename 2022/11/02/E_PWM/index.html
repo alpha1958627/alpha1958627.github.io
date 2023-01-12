@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="电路基础 电阻 电容 \[U=L\frac{di}{dt}\] \[电流超前电压90^\circ\] 电感 \[i=C\frac{du}{dt}\] \[电流滞后电压90^\circ\] 阻抗 相量只是表示正弦量，而不等于正弦量 \[ \begin{aligned} Z_R&amp;amp;=R \\Z_C &amp;amp;=\frac{1}{j\omega C} &amp;amp;=-j\fr">
+    <meta name="description" content="Pulse Width Modulation 面积等效原理 冲量相同，时间、形状不同的波形对惯性环节具有相同效果  使用方波信号模拟正弦信号  占空比 Duty Ratio \[\frac{t_{高电平}}{T}\] \[U=U_m\times 占空比\] \(\Rightarrow\)D/A转换">
   
   
   
-  <title>电子线路&amp;电工学1 - Hexo</title>
+  <title>PWM - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="电子线路&amp;电工学1"></span>
+            <span id="subtitle" data-typed-text="PWM"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-18 11:00" pubdate>
-          2022年10月18日 上午
+        <time datetime="2022-11-02 11:00" pubdate>
+          2022年11月2日 上午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          741 字
+          135 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          7 分钟
+          2 分钟
         
       </span>
     
@@ -287,61 +287,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">电子线路&amp;电工学1</h1>
+            <h1 style="display: none">PWM</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="电路基础">电路基础</h1>
-<h2 id="电阻">电阻</h2>
-<h2 id="电容">电容</h2>
-<p><span class="math display">\[U=L\frac{di}{dt}\]</span> <span
-class="math display">\[电流超前电压90^\circ\]</span></p>
-<h2 id="电感">电感</h2>
-<p><span class="math display">\[i=C\frac{du}{dt}\]</span> <span
-class="math display">\[电流滞后电压90^\circ\]</span></p>
-<h2 id="阻抗">阻抗</h2>
-<p><strong><em>相量只是表示正弦量，而不等于正弦量</em></strong> <span
-class="math display">\[
-\begin{aligned}
-Z_R&amp;=R
-\\Z_C
-&amp;=\frac{1}{j\omega C}
-&amp;=-j\frac{1}{\omega C}\\
-Z_L&amp;=j\omega L\\
-记容抗\\为X_C&amp;=-\frac{1}{\omega C}\\
-感抗为X_L&amp;=\omega L\\
-导纳为Y&amp;=\frac{1}{Z}\\\\
-\end{aligned}\\
-\]</span> 阻抗是频率的函数<span
-class="math inline">\(Z(j\omega)\)</span><br />
-可以写成<span
-class="math inline">\(Z(j\omega)=R(\omega)+jX(\omega)\)</span><br />
-<span class="math inline">\(R\)</span>不仅仅取决于电阻<br />
-<span class="math inline">\(X\)</span>也不仅仅取决于动态元件<br />
-<span class="math display">\[
-X(\omega)&gt;0称感性\]</span></p>
-<p><span class="math display">\[X(\omega)&lt;0称容性\]</span></p>
-<p><span class="math display">\[X(\omega)=0称电阻性\\\]</span></p>
-<h2 id="功率">功率</h2>
-<p><span class="math display">\[
-\begin{aligned}
-u(t)&amp;=\sqrt{2}Ucos(\omega t+\theta)\\i(t)&amp;=\sqrt{2}Icos\omega
-t\\
-P&amp;=UIcos\theta\\
-\end{aligned}\\\]</span> <span
-class="math inline">\(\theta\)</span>是阻抗角<br />
-纯电感和纯电容时为0,表示无能量消耗<br />
-纯电阻时功率最大 <span
-class="math inline">\(cos\theta\)</span>成为功率因数$<br />
-当<span
-class="math inline">\(RL\)</span>串联时电源处能量交换的值会变小（部分能量在<span
-class="math inline">\(R\)</span><span
-class="math inline">\(C\)</span>之间消耗<br />
-<strong>无功功率</strong></p>
-<p><strong>视在功率</strong> <span
-class="math display">\[S=UI=\left|Z\right|I^2\]</span> <span
-class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
+                <h1
+id="pulse-width-modulation"><font  color="#66c18c"><strong>P</strong></font>ulse
+<font  color="#66c18c"><strong>W</strong></font>idth
+<font  color="#66c18c"><strong>M</strong></font>odulation</h1>
+<h2 id="面积等效原理">面积等效原理</h2>
+<p>冲量相同，时间、形状不同的波形对惯性环节具有相同效果</p>
+<blockquote>
+<p>使用方波信号模拟正弦信号</p>
+</blockquote>
+<h2
+id="占空比-duty-ratio"><font  color="#66c18c"><strong>占空比</strong></font>
+Duty Ratio</h2>
+<p><span class="math display">\[\frac{t_{高电平}}{T}\]</span></p>
+<p><span class="math display">\[U=U_m\times 占空比\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span>D/A转换</p>
 
                 
               </div>
@@ -366,8 +331,8 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>电子线路&amp;电工学1</div>
-      <div>http://example.com/2022/10/18/E1/</div>
+      <div>PWM</div>
+      <div>http://example.com/2022/11/02/E_PWM/</div>
     </div>
     <div class="license-meta">
       
@@ -379,7 +344,7 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月18日</div>
+          <div>2022年11月2日</div>
         </div>
       
       
@@ -411,9 +376,9 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/18/E3/" title="半导体器件">
+                      <a href="/2022/11/08/Ethree-phase/" title="三相电">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">半导体器件</span>
+                        <span class="hidden-mobile">三相电</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -421,8 +386,8 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/18/M1/" title="材力笔记">
-                        <span class="hidden-mobile">材力笔记</span>
+                      <a href="/2022/10/31/Laplace/" title="Laplace">
+                        <span class="hidden-mobile">Laplace</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
