@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Simulink 2阶系统模拟 \[F=ma\] Vibration 振动   弹簧和阻尼器构成的二阶系统  \[\ddot x+\frac{B}{m}\dot x+\frac{k}{m}x=F\] \[ \left\{ \begin{aligned} &amp;amp;\text{Natural Frequency}&amp;amp;\omega_n &amp;amp; =  \sqrt{\frac">
+    <meta name="description" content="Transformer  Attention is all you need   多头注意力 前馈神经网络FFN masked 多头注意力 遮住后来的信息 自注意力 并行化 没有循环结构 预训练  以前都是RNN  可用于图像处理 医学成像 语音识别  从NLP出发，拓展到多领域 计算机视觉 视频预测VFFP  双流计算 中间转换  计算量大">
   
   
   
-  <title>Simulink 2阶系统模拟 - Hexo</title>
+  <title>transformer - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/2077.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Simulink 2阶系统模拟"></span>
+            <span id="subtitle" data-typed-text="transformer"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-03 17:23" pubdate>
-          2023年1月3日 下午
+        <time datetime="2023-02-03 20:00" pubdate>
+          2023年2月3日 晚上
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          140 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          11 分钟
+          2 分钟
         
       </span>
     
@@ -287,109 +287,39 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Simulink 2阶系统模拟</h1>
+            <h1 style="display: none">transformer</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="simulink-2阶系统模拟">Simulink 2阶系统模拟</h1>
-<p><span class="math display">\[F=ma\]</span></p>
-<h2 id="vibration-振动">Vibration 振动</h2>
-<figure>
-<img
-src="https://pic4.zhimg.com/80/v2-35ae19989b169d83d3d30355f89bd6cb.jpg"
-alt="弹簧和阻尼器构成的二阶系统" />
-<figcaption aria-hidden="true">弹簧和阻尼器构成的二阶系统</figcaption>
-</figure>
-<p><span class="math display">\[\ddot x+\frac{B}{m}\dot
-x+\frac{k}{m}x=F\]</span> <span class="math display">\[ \left\{
-\begin{aligned}
-&amp;\text{Natural Frequency}&amp;\omega_n &amp; =  \sqrt{\frac{k}{m}}
-\\
-&amp;\text{Damping ratio}&amp;\zeta &amp; =  \frac{B}{\sqrt{2km}} \\
-\end{aligned}
-\right.
-\]</span> <span class="math display">\[ \text{Initial condition}\left\{
-\begin{aligned}
-&amp;F=0\\
-&amp;x(0)=x_0\\
-&amp;\dot x(0)=\dot x_0
-\end{aligned}
-\right.
-\]</span></p>
-<p>得到： <span class="math display">\[\ddot x+2\zeta\omega_n \dot
-x+\omega_n^2x=0\]</span></p>
-<strong>characteristic equation 特征方程：</strong> <span
-class="math display">\[x^2+2\zeta\omega_n \dot x+\omega_n^2x=0\]</span>
-$$ {
-<span class="math display">\[\begin{aligned}
-&amp;x_1=-\zeta\omega_n+\omega_n \sqrt{\zeta^2-1}\\
-&amp;x_2=-\zeta\omega_n-\omega_n \sqrt{\zeta^2-1}\\
-
-
-\end{aligned}\]</span>
-<p>. $$</p>
-<h2 id="simulink">Simulink</h2>
-<p><span class="math display">\[ \text{setting}\left\{
-\begin{aligned}
-&amp;\ddot x=-2\zeta\omega_n \dot x-\omega_n^2x\\
-&amp;x(0)=5\\
-&amp;\dot x(0)=0
-\end{aligned}
-\right.
-\]</span> <img
-src="https://pic4.zhimg.com/80/v2-5540159bad48ca5faa1dc786af51d57e.png"
-alt="simulink 建模" /> # 不同<span
-class="math inline">\(\zeta\)</span>下的响应曲线</p>
-<ol type="1">
-<li><p><strong>over damped</strong></p>
-<p><span class="math inline">\(\zeta&gt;1\)</span> 即 <span
-class="math inline">\(\frac{B}{\sqrt{2km}}&gt;1\)</span>.</p>
-<p>两实根<span
-class="math inline">\(X(t)=C_1e^{\lambda_1t}+C_2e^{\lambda_2t}\)</span></p>
-<p>收敛取决于<span class="math inline">\(\lambda_1\)</span>，因为<span
-class="math inline">\(\left|\lambda_1\right|\)</span>更小 <img
-src="https://pic4.zhimg.com/80/v2-83ea686aa3d5282d0164ac49e9d6419d.png"
-alt="3" /></p></li>
-<li><p><strong>critical damped</strong></p></li>
-</ol>
-<p><span class="math inline">\(\zeta=1\)</span> 即 <span
-class="math inline">\(\frac{B}{\sqrt{2km}}=1\)</span>.</p>
-<p>一实根 <span class="math inline">\(X(t)=(C_1+C_2t)e^{\lambda
-t}\)</span> <img
-src="https://pic4.zhimg.com/80/v2-b2cfe50aaf007aaf84de6b891631ad6b.png"
-alt="1" /> 3. <strong>under damped</strong></p>
-<p><span class="math inline">\(\zeta&lt;1\)</span> 即 <span
-class="math inline">\(\frac{B}{\sqrt{2km}}&lt;1\)</span>.</p>
-<p>一对复共轭根<span class="math inline">\(\lambda=\alpha \pm
-i\beta\)</span></p>
-<p><span class="math inline">\(X(t)=e^{-\alpha t}(C_1\cos\beta t+C_2\sin
-\beta t)\)</span> <img
-src="https://pic4.zhimg.com/80/v2-33ea600fe5b1d516bf55dac12d665358.png"
-alt="0.1" /> 4. <code>3</code>中<span
-class="math inline">\(\alpha=0\)</span> <img
-src="https://pic4.zhimg.com/80/v2-b0fc186a5f3370f7cc1974d65dc002b3.png"
-alt="0" /></p>
-<ol start="5" type="1">
-<li><span class="math inline">\(-1&lt;\zeta&lt;0\)</span> 即 -1&lt;<span
-class="math inline">\(\frac{B}{\sqrt{2km}}&lt;0\)</span>.</li>
-</ol>
-<figure>
-<img
-src="https://pic4.zhimg.com/80/v2-75a1e0ec6a971755099785d4ba5358e7.png"
-alt="-0.5" />
-<figcaption aria-hidden="true">-0.5</figcaption>
-</figure>
-<ol start="6" type="1">
-<li><span class="math inline">\(\zeta&lt;-1\)</span> 即 -1&lt;<span
-class="math inline">\(\frac{B}{\sqrt{2km}}&lt;-1\)</span>.</li>
-</ol>
-<figure>
-<img
-src="https://pic4.zhimg.com/80/v2-5de0aa37e8bac5bea94108f4c3a99a3c.png"
-alt="-3" />
-<figcaption aria-hidden="true">-3</figcaption>
-</figure>
+                <h1
+id="transformer"><font  color="#66c18c"><strong>Transformer</strong></font></h1>
+<blockquote>
+<p>Attention is all you need</p>
+</blockquote>
+<ul>
+<li><p>多头注意力</p></li>
+<li><p>前馈神经网络FFN</p></li>
+<li><p>masked 多头注意力 遮住后来的信息</p></li>
+<li><p>自注意力</p></li>
+<li><p>并行化</p></li>
+<li><p>没有循环结构</p></li>
+<li><p>预训练</p></li>
+</ul>
+<p>以前都是RNN</p>
+<ul>
+<li>可用于图像处理</li>
+<li>医学成像</li>
+<li>语音识别</li>
+</ul>
+<p>从NLP出发，拓展到多领域</p>
+<h2 id="计算机视觉">计算机视觉</h2>
+<h3 id="视频预测vffp">视频预测VFFP</h3>
+<ul>
+<li>双流计算</li>
+<li>中间转换</li>
+</ul>
+<p>计算量大</p>
 
                 
               </div>
@@ -402,7 +332,7 @@ alt="-3" />
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Control/">#Control</a>
+        <a href="/tags/CS/">#CS</a>
       
     </div>
   
@@ -414,8 +344,8 @@ alt="-3" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Simulink 2阶系统模拟</div>
-      <div>http://example.com/2023/01/03/Simulink_2rd/</div>
+      <div>transformer</div>
+      <div>http://example.com/2023/02/03/NNtransformer/</div>
     </div>
     <div class="license-meta">
       
@@ -427,7 +357,7 @@ alt="-3" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月3日</div>
+          <div>2023年2月3日</div>
         </div>
       
       
@@ -459,18 +389,12 @@ alt="-3" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/04/NNpinn/" title="PINN">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PINN</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/NNdata/" title="数据预处理">
-                        <span class="hidden-mobile">数据预处理</span>
+                      <a href="/2023/01/12/oral_English/" title="Oral English">
+                        <span class="hidden-mobile">Oral English</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
