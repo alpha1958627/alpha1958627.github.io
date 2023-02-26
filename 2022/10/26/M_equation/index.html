@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="钢架的内力（Internal force）方向 平面刚杆（Plane frame members）  剪力（shear force） &amp;gt; 任一侧，注明正负 弯矩（bending moment） &amp;gt; 受压侧 轴力（axial force） &amp;gt; 任一侧  平面曲杆（Plane curved bars)  剪力（shear force） &amp;gt; 对任一点取矩，顺">
+    <meta name="description" content="\(\frac{1}{\rho}=\frac{M}{EI}\) 主应力：\(\sigma=\frac{My}{I_z}\) 切应力：\(\tau=\frac{F_s S_z^*}{b I_z}\)  矩形：\(\tau=\frac{3}{2}\frac{F_s}{bh}\); 圆形：\(\tau=\frac{4}{3}\frac{F_s}{A}\); 圆筒：\(\tau=2\fr">
   
   
   
-  <title>材力笔记 - Hexo</title>
+  <title>材力-公式篇 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="材力笔记"></span>
+            <span id="subtitle" data-typed-text="材力-公式篇"></span>
           
         </div>
 
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          4.3k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          22 分钟
+          36 分钟
         
       </span>
     
@@ -287,26 +287,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">材力笔记</h1>
+            <h1 style="display: none">材力-公式篇</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="钢架的内力internal-force方向">钢架的内力（Internal
-force）方向</h1>
-<h2 id="平面刚杆plane-frame-members">平面刚杆（Plane frame
-members）</h2>
-<ol type="1">
-<li>剪力（shear force） &gt; 任一侧，注明正负</li>
-<li>弯矩（bending moment） &gt; 受压侧</li>
-<li>轴力（axial force） &gt; 任一侧</li>
-</ol>
-<h2 id="平面曲杆plane-curved-bars">平面曲杆（Plane curved bars)</h2>
-<ol type="1">
-<li>剪力（shear force） &gt; 对任一点取矩，顺时针为正</li>
-<li>弯矩（bending moment） &gt; 使曲率增加即为正</li>
-<li>轴力（axial force） &gt; 引起拉伸</li>
-</ol>
+                <ul>
+<li><p><span
+class="math inline">\(\frac{1}{\rho}=\frac{M}{EI}\)</span></p></li>
+<li><p>主应力：<span
+class="math inline">\(\sigma=\frac{My}{I_z}\)</span></p></li>
+<li><p>切应力：<span class="math inline">\(\tau=\frac{F_s S_z^*}{b
+I_z}\)</span></p>
+<ul>
+<li>矩形：<span
+class="math inline">\(\tau=\frac{3}{2}\frac{F_s}{bh}\)</span>;</li>
+<li>圆形：<span
+class="math inline">\(\tau=\frac{4}{3}\frac{F_s}{A}\)</span>;</li>
+<li>圆筒：<span class="math inline">\(\tau=2\frac{F_s}{A},A=2\pi
+r\delta_0\)</span>;</li>
+</ul></li>
+</ul>
 <h1 id="截面几何性质properties-of-plane-areas">截面几何性质（Properties
 of plane areas）</h1>
 <h2
@@ -318,6 +319,23 @@ id="极惯性矩-惯性矩-惯性积polar-moment-of-inertia-moment-of-inertia-pr
 inertia）</h2>
 <h2 id="平行移轴公式parallel-axis-theorem">平行移轴公式（Parallel-Axis
 theorem）</h2>
+<h2 id="常用">常用</h2>
+<ol type="1">
+<li>圆</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+I_{\rho}&amp;=\frac{\pi d^4}{32}=\frac{\pi r^4}{2}\\
+I_{z}&amp;=\frac{\pi d^4}{64}=\frac{\pi r^4}{4}\\
+W&amp;=\frac{i}{y_{max}}
+\end{align}\]</span></p>
+<ol start="2" type="1">
+<li>矩形 <span class="math display">\[\begin{align}
+I_{z}=\frac{bh^3}{12}\\
+W=\frac{bh^2}{6}
+\end{align}\]</span></li>
+</ol>
+<h1
+id="转动相关"><font  color="#66c18c"><strong>转动相关</strong></font></h1>
 <h2 id="转轴公式rotation-of-axes">转轴公式（Rotation of axes）</h2>
 <blockquote>
 <p>方向：逆时针转为正</p>
@@ -338,26 +356,68 @@ class="math inline">\(I_{yz}=0\)</span></li>
 <li>形心主惯性矩（centroidal principal moment of inertia） <span
 class="math display">\[\begin{align}
 tg2\alpha_0&amp;=\frac{-2I_{yz}}{I_{y}-Iz}\\
-I_{y.or.z}&amp;=\frac{I_y+I_z}{2}\pm\sqrt{(I_y-I_z)^2+4I_{yz}^2}
+I_{y.or.z}&amp;=\frac{I_y+I_z}{2}\pm\sqrt{(\frac{I_y-I_z}{2})^2+I_{yz}^2}
 \end{align}\]</span> &gt; <span
 class="math inline">\(I_{y.or.z}\)</span>一个为<span
 class="math inline">\(max\)</span>一个<span
-class="math inline">\(min\)</span> ## 常用</li>
+class="math inline">\(min\)</span></li>
 </ul>
-<ol type="1">
-<li>圆</li>
-</ol>
+<hr />
+<h2 id="应力公式">应力公式</h2>
+<blockquote>
+<p>方向：逆时针转为正</p>
+</blockquote>
+<p>$$<span class="math display">\[\begin{align}
+\sigma_{\alpha}&#39;&amp;=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}cos2\alpha-\sigma_{yz}sin2\alpha\\
+
+
+\end{align}\]</span>$$</p>
+<blockquote>
+<p><span
+class="math inline">\(\sigma_x&#39;+\sigma_y&#39;=\sigma_x+\sigma_y\)</span>
+<font  color="#33c18c"><strong>应力不变量</strong></font></p>
+<p>一个点上相互垂直的面的正应力之和是定值</p>
+</blockquote>
 <p><span class="math display">\[\begin{align}
-I_{\rho}&amp;=\frac{\pi d^4}{32}=\frac{\pi r^4}{2}\\
-I_{z}&amp;=\frac{\pi d^4}{64}=\frac{\pi r^4}{4}\\
-W&amp;=\frac{i}{y_{max}}
+\tau_{\alpha}&#39;=\frac{\sigma_x-\sigma_y}{2}sin2\alpha+\tau_{xy}cos2\alpha\\
 \end{align}\]</span></p>
-<ol start="2" type="1">
-<li>矩形 <span class="math display">\[\begin{align}
-I_{z}=\frac{bh^3}{12}\\
-W=\frac{bh^2}{6}
-\end{align}\]</span></li>
-</ol>
+<p><span class="math display">\[\begin{align}
+tg2\alpha_0&amp;=\frac{-2\tau_{xy}}{\sigma_{y}-\sigma_y}\\
+\sigma_{y.or.z}&amp;=\frac{\sigma_x+\sigma_y}{2}\pm\sqrt{(\frac{\sigma_x-\sigma_y}{2})^2+\tau_{xy}^2}
+\end{align}\]</span> &gt; <span
+class="math inline">\(I_{y.or.z}\)</span>一个为<span
+class="math inline">\(max\)</span>一个<span
+class="math inline">\(min\)</span></p>
+<h2 id="应变公式">应变公式</h2>
+<blockquote>
+<p>方向：逆时针转为正</p>
+</blockquote>
+<p>$$<span class="math display">\[\begin{align}
+\varepsilon_{\alpha}&#39;&amp;=\frac{\varepsilon_x+\varepsilon_y}{2}+\frac{\varepsilon_x-\varepsilon_y}{2}cos2\alpha-\frac{\gamma_{xy}}{2}sin2\alpha\\
+
+
+\end{align}\]</span>$$</p>
+<p><span class="math display">\[\begin{align}
+\tau_{\alpha}&#39;=\frac{\varepsilon_x-\varepsilon_y}{2}sin2\alpha+\frac{\gamma_{xy}}{2}cos2\alpha\\
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+tg2\alpha_0&amp;=\frac{-2\frac{\gamma_{xy}}{2}}{\varepsilon_{y}-\varepsilon_y}\\
+\varepsilon_{y.or.z}&amp;=\frac{\varepsilon_x+\varepsilon_y}{2}\pm\sqrt{(\frac{\varepsilon_x-\varepsilon_y}{2})^2+\frac{\gamma_{xy}}{2}^2}
+\end{align}\]</span></p>
+<hr />
+<h2
+id="广义胡克定律"><font  color="#66c18c"><strong>广义胡克定律</strong></font></h2>
+<p><span class="math display">\[\begin{align*}
+\varepsilon_x&amp;=\frac{1}{E}\left[\sigma_x-\mu(\sigma_y+\sigma_z)\right]\\
+\varepsilon_y&amp;=\frac{1}{E}\left[\sigma_y-\mu(\sigma_z+\sigma_x)\right]\\
+\varepsilon_z&amp;=\frac{1}{E}\left[\sigma_z-\mu(\sigma_x+\sigma_y)\right]
+\end{align*}\]</span></p>
+<p>体应变：</p>
+<p><span class="math display">\[\begin{align*}
+\theta&amp;=\varepsilon_x+\varepsilon_y+\varepsilon_z=\frac{1-2\mu}{E}(\sigma_x+\sigma_y+\sigma_z)=\frac{\sigma_m}{K}
+\\
+\text{其中}K&amp;=\frac{E}{3(1-2\mu)}
+\end{align*}\]</span></p>
 <h1 id="弯曲应力">弯曲应力</h1>
 <h2 id="纯弯曲pure-bending">纯弯曲Pure bending</h2>
 <blockquote>
@@ -455,6 +515,47 @@ integration</strong></h2>
 <li>逐段钢化 <em>有外伸梁时用</em></li>
 </ol>
 <h2 id="经典载荷变形p195">经典载荷变形（P195）</h2>
+<h1
+id="能量法"><font  color="#66c18c"><strong>能量法</strong></font></h1>
+<h2 id="互等定理">互等定理</h2>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-9355300be436f63ea4a9cd6a2f28f88a.png"
+alt="互等定理" />
+<figcaption aria-hidden="true">互等定理</figcaption>
+</figure>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-50ed5e2263a2ac865a372d259e1d00ea.png"
+alt="互等定理" />
+<figcaption aria-hidden="true">互等定理</figcaption>
+</figure>
+<h2 id="卡氏定理">卡氏定理</h2>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-d8831e54c4f465798a607574f1457219.jpg"
+alt="无中生有" />
+<figcaption aria-hidden="true">无中生有</figcaption>
+</figure>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-2ba20b1fecac8ecfb41f402a48f5e870.png"
+alt="卡氏定理" />
+<figcaption aria-hidden="true">卡氏定理</figcaption>
+</figure>
+<h2 id="莫尔定理">莫尔定理</h2>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-91571c7a3e92e195c564161493d9045b.jpg"
+alt="莫尔" />
+<figcaption aria-hidden="true">莫尔</figcaption>
+</figure>
+<figure>
+<img
+src="https://pic4.zhimg.com/80/v2-465022edb9fce180b09de4a82a1ff2f3.jpg"
+alt="莫尔图乘" />
+<figcaption aria-hidden="true">莫尔图乘</figcaption>
+</figure>
 
                 
               </div>
@@ -479,8 +580,8 @@ integration</strong></h2>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>材力笔记</div>
-      <div>http://example.com/2022/10/26/M5/</div>
+      <div>材力-公式篇</div>
+      <div>http://example.com/2022/10/26/M_equation/</div>
     </div>
     <div class="license-meta">
       
