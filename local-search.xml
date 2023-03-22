@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>交流电动机</title>
+    <link href="/2023/03/22/E7/"/>
+    <url>/2023/03/22/E7/</url>
+    
+    <content type="html"><![CDATA[<h1 id="公式">公式</h1><ul><li>转速 <span class="math inline">\(n_0=\frac{60 f_1}{p} ,\)</span>p为极对数;<ul><li>旋转磁场和转子相对转速<spanclass="math inline">\((n_0-n)\)</span></li></ul></li><li>转差率 <span class="math inline">\(s=\frac{n_0-n}{n_0}\)</span><ul><li><span class="math inline">\(1\%-9\%\)</span></li><li><span class="math inline">\(n=0,s=1,\)</span>起动瞬间</li><li><span class="math inline">\(n=(1-s)n_0\)</span></li></ul></li><li>定子<ul><li>电流频率<spanclass="math inline">\(f_1=\frac{pn_0}{60}\)</span></li></ul></li><li>转子<ul><li>频率<spanclass="math inline">\(f_2=\frac{p(n_0-n)}{60}=sf_1\)</span></li><li>电动势<span class="math inline">\(E_2=sE_{20}\)</span></li><li>感抗<span class="math inline">\(X_2=sX_{20}\)</span></li><li>电流<spanclass="math inline">\(I_2=\frac{sE_{20}}{\sqrt{R_2^2+(sX_{20})^2}}\)</span></li><li>功率因数<span class="math inline">\(\cos\varphi=\frac{R_2}{\sqrt{R_2^2+(sX_{20})^2}}\)</span></li><li>关系图</li></ul></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Electricity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>经典热力学</title>
     <link href="/2023/03/14/H1/"/>
     <url>/2023/03/14/H1/</url>
@@ -188,6 +207,25 @@
   
   
   <entry>
+    <title>正则化</title>
+    <link href="/2022/12/30/NN2/"/>
+    <url>/2022/12/30/NN2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="l_2正则-vs-l_1正则"><span class="math inline">\(L_2\)</span>正则vs <span class="math inline">\(L_1\)</span>正则</h1><p>为什么我们首先使用范数<spanclass="math inline">\(L_2\)</span>，而不是范数<spanclass="math inline">\(L_1\)</span>。事实上，这个选择在整个统计领域中都是有效的和受欢迎的。 <spanclass="math inline">\(L_2\)</span>正则化线性模型构成经典的<strong>岭回归</strong>（ridgeregression）算法，<span class="math inline">\(L_1\)</span>正则化线性回归是统计学中类似的基本模型，通常被称为<strong>套索回归</strong>（lasso regression）。 使用范数<spanclass="math inline">\(L_2\)</span>的一个原因是它对权重向量的大分量施加了巨大的惩罚。这使得我们的学习算法偏向于在大量特征上均匀分布权重的模型。在实践中，这可能使它们对单个变量中的观测误差更为稳定。</p><p>相比之下，<spanclass="math inline">\(L_1\)</span>惩罚会导致模型将权重集中在<u>一小部分特征上，而将其他权重清除为零</u>。这称为<font  color="#66c18c"><strong>特征选择</strong></font>（featureselection），这可能是其他场景下需要的。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>神经网络基础</title>
     <link href="/2022/12/30/NN1/"/>
     <url>/2022/12/30/NN1/</url>
@@ -212,25 +250,6 @@
     <url>/2022/12/30/NNdata/</url>
     
     <content type="html"><![CDATA[<h1 id="数据操作">数据操作</h1><h2 id="大小">大小</h2><p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.shape<br></code></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.numel()<br></code></pre></td></tr></table></figure> ## 整形、融合 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">X = torch.arange(<span class="hljs-number">12</span>, dtype=torch.float32).reshape((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))<br>Y = torch.tensor([[<span class="hljs-number">2.0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]])<br>torch.cat((X, Y), dim=<span class="hljs-number">0</span>), torch.cat((X, Y), dim=<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure> out:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">(tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>],<br>         [ <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]),<br> tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]))<br></code></pre></td></tr></table></figure> # 数据预处理 ## 创建csv</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br>os.makedirs(os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>), exist_ok=<span class="hljs-literal">True</span>)<br>data_file = os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-string">&#x27;house_tiny.csv&#x27;</span>)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(data_file, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(<span class="hljs-string">&#x27;NumRooms,Alley,Price\n&#x27;</span>)  <span class="hljs-comment"># 列名</span><br>    f.write(<span class="hljs-string">&#x27;NA,Pave,127500\n&#x27;</span>)  <span class="hljs-comment"># 每行表示一个数据样本</span><br>    f.write(<span class="hljs-string">&#x27;2,NA,106000\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;4,NA,178100\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;NA,NA,140000\n&#x27;</span>)<br></code></pre></td></tr></table></figure><h2 id="读取数据集">读取数据集</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><br>data = pd.read_csv(data_file)<br><span class="hljs-built_in">print</span>(data)<br></code></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms Alley   Price<br><span class="hljs-number">0</span>       NaN  Pave  <span class="hljs-number">127500</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>   NaN  <span class="hljs-number">106000</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>   NaN  <span class="hljs-number">178100</span><br><span class="hljs-number">3</span>       NaN   NaN  <span class="hljs-number">140000</span><br></code></pre></td></tr></table></figure><h2 id="处理缺失值">处理缺失值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs, outputs = data.iloc[:, <span class="hljs-number">0</span>:<span class="hljs-number">2</span>], data.iloc[:, <span class="hljs-number">2</span>]<span class="hljs-comment"># 前两列是input，最后一列是output</span><br>inputs = inputs.fillna(inputs.mean())<span class="hljs-comment"># 填充NAN的值</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure><h2 id="独热编码-one-hot-encoding">独热编码 one-hot encoding</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs = pd.get_dummies(inputs, dummy_na=<span class="hljs-literal">True</span>)<span class="hljs-comment"># dummt_na给NAN也设一个特征列</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms  Alley_Pave  Alley_nan<br><span class="hljs-number">0</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">1</span>          <span class="hljs-number">0</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">3</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><blockquote><p>单列的文本数据变成了两个特征</p></blockquote>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>CS</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>正则化</title>
-    <link href="/2022/12/30/NN2/"/>
-    <url>/2022/12/30/NN2/</url>
-    
-    <content type="html"><![CDATA[<h1 id="l_2正则-vs-l_1正则"><span class="math inline">\(L_2\)</span>正则vs <span class="math inline">\(L_1\)</span>正则</h1><p>为什么我们首先使用范数<spanclass="math inline">\(L_2\)</span>，而不是范数<spanclass="math inline">\(L_1\)</span>。事实上，这个选择在整个统计领域中都是有效的和受欢迎的。 <spanclass="math inline">\(L_2\)</span>正则化线性模型构成经典的<strong>岭回归</strong>（ridgeregression）算法，<span class="math inline">\(L_1\)</span>正则化线性回归是统计学中类似的基本模型，通常被称为<strong>套索回归</strong>（lasso regression）。 使用范数<spanclass="math inline">\(L_2\)</span>的一个原因是它对权重向量的大分量施加了巨大的惩罚。这使得我们的学习算法偏向于在大量特征上均匀分布权重的模型。在实践中，这可能使它们对单个变量中的观测误差更为稳定。</p><p>相比之下，<spanclass="math inline">\(L_1\)</span>惩罚会导致模型将权重集中在<u>一小部分特征上，而将其他权重清除为零</u>。这称为<font  color="#66c18c"><strong>特征选择</strong></font>（featureselection），这可能是其他场景下需要的。</p>]]></content>
     
     
     
@@ -531,6 +550,63 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><h1 id="图片">图片</h1><p><code>A:\xx\homepage\hexogit\a_zhihu\figures</code>里右键上传至图床</p><h1 id="换色">换色</h1><p><font  color="#66c18c"><strong>P</strong></font>ulse</p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>RL</title>
+    <link href="/2022/03/22/NNRL/"/>
+    <url>/2022/03/22/NNRL/</url>
+    
+    <content type="html"><![CDATA[<h1 id="符号表">符号表</h1><p><spanclass="math display">\[\mathop{argmax}\limits_{ \alpha}f(\alpha) \qquad f(\alpha)取最大值时\alpha的值\\s  \qquad  状态\\a\qquad 动作\\r \qquad     奖励\\ \pi \qquad 策略\\G_t \qquad t的回报\]</span> # 类比视觉领域 ## 传统cv 1. 给定图片，提取特征 2.HOG,histogram of oriental gradient（方向梯度直方图） 3. DPM,deformablepart model （可变现的组件模型） 4. 分类器SVM，support vectormachine（支持向量机）或者boosting ## 深度cv - End to End -合并提取特征和分类</p><h1 id="知乎">知乎</h1><p><a href="https://zhuanlan.zhihu.com/p/491085873">安全强化学习</a></p><p>强化学习:通过智能体试错求解最优策略。智能体探索各种好的、坏的动作，并根据环境反馈的奖励去优化选择动作，最终学出一个奖励和最大的最优策略（状态-动作序列）。但是训练中，智能体经常会探索一些不安全的动作，比如碰撞。对于一些高安全领域，比如机器人、自动驾驶，这就很危险。因此，需要限制避免这些不安全的动作。传统方法如：设置惩罚负奖励，限制动作空间，遇到不安全的动作或状态直接终止等，虽能避免一些不安全的动作，但仍没有很好的解决安全性问题。比如，惩罚设置过小，智能体容易忽视惩罚；惩罚设置过大或遇到不安全直接终止，智能体容易表现保守；限制动作空间，可能错过最优解。因此，传统方法导致智能体都不能平衡好任务性能和安全性（奖励和代价）。因此，我们需要提高安全性的强化学习，最大化奖励的同时满足安全约束，这就是安全强化学习。## CMDP 安全强化学习建模为约束马尔可夫决策过程（Constrained MarkovDecision Process，CMDP），用七元组 <spanclass="math display">\[(S,A,p,r,c,d,\gamma)\]</span>表示，即状态空间、动作空间、状态转移函数、奖励、代价、代价阈值和折扣因子。</p><p><span class="math display">\[\begin{cases}\mathop{max}\limits_{\pi}&amp;\mathop{E}\limits_{(s_t,a_t)\sim\rho_{\pi}} \left[\sum\limits_t\gamma^tr(s_t,a_t)\right]\\s.t.&amp;\mathop{E}\limits_{(s_t,a_t)\sim\rho_{\pi}}\left[\sum\limits_t\gamma^tr(s_t,a_t)\right]\le{d}\end{cases}\]</span></p><p>智能体每一步会收到一个奖励<span class="math display">\[r\]</span>和代价 <span class="math display">\[c\]</span>，策略目标是在不超过代价阈值的约束条件下最大化长期奖励。因此，这是一个约束优化问题，通过最优化满足安全下的奖励目标函数，可以较好地取得奖励和安全的折中。<a href="https://zhuanlan.zhihu.com/p/491700029">Key Papers in Deep RL ‒Spinning Up documentation</a> # 分类 ## MDP,马尔可夫决策过程 问题贝尔曼方程 算法 预测 贝尔曼方程 迭代策略评估 控制 贝尔曼期望方程策略迭代 控制 贝尔曼最优化方程 价值迭代picture? (markov decisionposition) <spanclass="math display">\[需要&lt;S,A,P,R&gt;建模\\o_t=s^e_t=s^a_t\]</span>- 通过环境更新状态 - 通过内部更新状态 ## MRP,马尔可夫奖励过程 ### MonteCarlo 随波逐流 <spanclass="math display">\[要知道S_4的价值，就生成很多从S_4开始的轨迹，求其平均。\]</span>## Bell贝尔曼方程 <spanclass="math display">\[V(S)=R(S)+\gamma \sum_{s&#39;\inS}p(s&#39;|s)V(s&#39;)\]</span>只往前一步，V等于即时奖励加折扣因子乘下一个 ## bootstapping自举有点像数列前后项 ## 策略评估 DP，动态规划 MC，蒙特卡洛 TD，时序差分策略迭代vs价值迭代 - 在Policy Iteration中 - 第一步 PolicyEval：一直迭代至收敛，获得准确的V(s) - 第二步 PolicyImprovement：根据准确的V(s)，求解最好的Action - 对比之下，在ValueIteration中 - 第一步 "Policy Eval"：迭代只做一步，获得不太准确的V(s) -第二步 "Policy Improvement"：根据不太准确的V(s)，求解最好的Action -核心是不断迭代Bellman Optimality Equation [图片]POMDP部分可观测马尔可夫决策过程 (partially observable Markov space) ###免模型预测 1. 蒙特卡洛 2. 动态规划 3. 时序差分</p><h2 id="免模型控制">免模型控制</h2><p>当我们不知道R和P怎么做出策略优化？ <spanclass="math display">\[与蒙特卡洛方法相比，时序差分方法有如下几个优势：\\\qquad低方差，能够在线学习，能够从不完整的序列中学习。\\所以我们可以把时序差分方法也放到控制循环（controlloop）里面去估计Q表格，再采取ε-贪心，这样就可以在回合没结束的时候更新已经采集到的状态价值。\]</span>### Sarsa</p><h3 id="q学习">Q学习</h3><p>在异策略学习的过程中，轨迹都是行为策略与环境交互产生的，产生这些轨迹后，我们使用这些轨迹来更新目标策略。异策略学习有很多好处。首先，我们可以利用探索策略来学到最佳的策略，学习效率高；其次，异策略学习可以让我们学习其他智能体的动作，进行模仿学习，学习人或者其他智能体产生的轨迹；最后，异策略学习可以让我们重用旧的策略产生的轨迹，探索过程需要很多计算资源，这样可以节省资源。## Value-based agent 只能应用在不连续的环境（下棋 不需要显式策略<br />## Q学习 ### Sarsa ### DQN ## Policy-based agent 制定显式策略 PG，policyGradient 策略梯度 MC，蒙特卡洛 Monte Carlo： <spanclass="math display">\[要知道S_4的价值，就生成很多从S_4开始的轨迹，求其平均。\]</span>TD，时序差分 ## Actor-Critic agent 同时使用策略和价值 在PG基础上更加快速一些简单常识 1. environment、goal、agent 2. state、action、reward 3.policy、value(all the reward you can get in the future Trial and ErrorDelayed Reward(下棋时可能没有reward，但是有value ##如何学习过去行为的价值：（类似复盘 - Credit Assignment - Backpropagation## Exploration vs Exploitation 权衡探索和利用 ## K-armed Bandit多臂老虎机 - 只有一个state - 没有延时奖励</p><ul><li>Finite Markov Decision Process</li><li>Dynamic Programming</li><li>Monte Carlo Methods</li><li>Temporal-Difference Learning # 第一个项目-tic tac toe ##Sample-average <spanclass="math display">\[\\Q(s_t,a_t)+\frac{1}{n}\cdot Error=Q(s_{t+1},a_{t+1})\]</span>学习率（步长）越来越小 <spanclass="math display">\[Q(s_{t+1},a_{t+1})=\frac{1}{n} \sum_{i=1}^nr_i\\与Q_1无关\]</span>如果有初值微调即可 固定学习率 <spanclass="math display">\[\\Q(s_t,a_t)+\alpha\cdot Error=Q(s_{t+1},a_{t+1})\\Q(s_{t+1},a_{t+1})=(1-\alpha)Q_1+\sum_{i=1}^n\alpha (1-\alpha)^{n-i}r_i\]</span></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git</title>
+    <link href="/2022/03/16/NNgit/"/>
+    <url>/2022/03/16/NNgit/</url>
+    
+    <content type="html"><![CDATA[<p><ahref="https://www.zhihu.com/search?type=content&amp;q=git">教程</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>第一堂课</title>
+    <link href="/2022/03/16/NNfirstclass/"/>
+    <url>/2022/03/16/NNfirstclass/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>不建议深究传值还是传引用</p></blockquote><h1 id="生成器">生成器</h1><p><ahref="https://blog.csdn.net/qq_41711700/article/details/102410690">同是用的小括号元组和生成器的区别</a></p><p>生成器用了<code>yield</code></p><p><ahref="https://blog.csdn.net/qq_46906413/article/details/123032075">yield和return</a></p><p><ahref="https://blog.csdn.net/yifengchaoran/article/details/113854853?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167895504616782425115979%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167895504616782425115979&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113854853-null-null.142%5Ev73%5Econtrol,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&amp;utm_term=%E7%94%9F%E6%88%90%E5%99%A8&amp;spm=1018.2226.3001.4187">迭代器与生成器</a></p><hr /><h2 id="str和repr">str和repr</h2><p><ahref="https://blog.csdn.net/Watkins_OS/article/details/100042680">str和repr</a></p><h2 id="异常">异常</h2><p><code>try</code>和<code>except</code></p><p><code>raise</code>,<code>finally</code></p><h2 id="文件读写">文件读写</h2><p><code>with open ('a.text','w') as f:</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CS</tag>
+      
+    </tags>
     
   </entry>
   
