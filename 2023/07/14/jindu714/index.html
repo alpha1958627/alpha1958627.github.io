@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="不建议深究传值还是传引用  生成器 同是用的小括号元组和生成器的区别 生成器用了yield yield和return 迭代器与生成器     ## str和repr str和repr   ## 异常 try和except   raise,finally   # 文件   ## 打开   with open (&#39;a.text&#39;,&#39;w&#39;) as">
+    <meta name="description" content="大创  做具体的点 软件使用（comsol） 文献阅读（师姐） ## 曲率驱动的液滴迁移 三种模型   牛顿方程  \[\begin{align} m \frac{\mathrm{d}^2 x}{\mathrm d t^2}=F_{毛细}-F_{阻}-G\end{align} \]  润滑模型 NS方程  模型  平面 锥体 曲率变化">
   
   
   
-  <title>第一堂课 - Hexo</title>
+  <title>笔记 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/b1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/cyber.jpeg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="第一堂课"></span>
+            <span id="subtitle" data-typed-text="笔记"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-16 16:00" pubdate>
-          2022年3月16日 下午
+        <time datetime="2023-07-14 11:00" pubdate>
+          2023年7月14日 上午
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          404 字
+          141 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          2 分钟
         
       </span>
     
@@ -287,91 +287,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">第一堂课</h1>
+            <h1 style="display: none">笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>不建议深究传值还是传引用</p>
-</blockquote>
-<h1 id="生成器">生成器</h1>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41711700/article/details/102410690">同是用的小括号元组和生成器的区别</a></p>
-<p>生成器用了<code>yield</code></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46906413/article/details/123032075">yield和return</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/yifengchaoran/article/details/113854853?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167895504616782425115979%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167895504616782425115979&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113854853-null-null.142%5Ev73%5Econtrol,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&amp;utm_term=%E7%94%9F%E6%88%90%E5%99%A8&amp;spm=1018.2226.3001.4187">迭代器与生成器</a></p>
-<table style="width:7%;">
-
-<tbody>
-<tr class="odd">
-<td>## str和repr <a
-target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/details/100042680">str和repr</a></td>
-</tr>
-<tr class="even">
-<td>## 异常 <code>try</code>和<code>except</code></td>
-</tr>
-<tr class="odd">
-<td><code>raise</code>,<code>finally</code></td>
-</tr>
-<tr class="even">
-<td># 文件</td>
-</tr>
-<tr class="odd">
-<td>## 打开</td>
-</tr>
-<tr class="even">
-<td><code>with open ('a.text','w') as f:</code></td>
-</tr>
-<tr class="odd">
-<td>## 读写</td>
-</tr>
-<tr class="even">
-<td>## 关闭</td>
-</tr>
-</tbody>
-</table>
-<h1 id="修饰器">修饰器</h1>
-<blockquote>
-<p>加了帽子加了鞋垫</p>
-</blockquote>
-<p>输入<code>func</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs *args```位置参数"><br>```**kwargs```关键字<br><br>## 使用<br><br>```python<br>@before<br>@after<br>def test()<br>    print(3)<br>test()<br></code></pre></td></tr></table></figure>
-<h2 id="实用性">实用性</h2>
+                <h1 id="大创">大创</h1>
 <ul>
-<li>函数运行的时间</li>
+<li>做具体的点</li>
+<li>软件使用（comsol）</li>
+<li>文献阅读（师姐） ## 曲率驱动的液滴迁移 三种模型</li>
 </ul>
-<h1 id="tcpip协议">TCP/IP协议</h1>
-<ul>
-<li>传输层 TCP</li>
-<li>网络层 IP</li>
-</ul>
-<blockquote>
-<p>三次握手</p>
-</blockquote>
-<h2 id="另一种-udp">另一种 UDP</h2>
-<blockquote>
-<p>一次握手</p>
-</blockquote>
-<h1 id="get-and-post">get and post</h1>
-<ul>
-<li>明文和加密</li>
-</ul>
-<h1 id="json">json</h1>
-<blockquote>
-<p>轻量级的数据交换格式</p>
-</blockquote>
-<p>java和JavaScript没啥关系</p>
-<p>Vue封装了css，JavaScript，html</p>
-<h1 id="beautifulsoap">Beautifulsoap</h1>
-<p>能解析html里的数据的python库</p>
-<h1 id="flask">Flask</h1>
-<h1 id="sql">SQL</h1>
-<blockquote>
-<p>关系型数据库</p>
-</blockquote>
+<ol type="1">
+<li>牛顿方程</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+m \frac{\mathrm{d}^2 x}{\mathrm d t^2}=F_{毛细}-F_{阻}-G\end{align}
+\]</span></p>
+<ol start="2" type="1">
+<li>润滑模型</li>
+<li>NS方程</li>
+</ol>
+<h2 id="模型">模型</h2>
+<ol type="1">
+<li>平面</li>
+<li>锥体</li>
+<li>曲率变化</li>
+</ol>
 
                 
               </div>
@@ -384,7 +326,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/CS/">#CS</a>
+        <a href="/tags/Mechanics/">#Mechanics</a>
       
     </div>
   
@@ -396,8 +338,8 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>第一堂课</div>
-      <div>http://example.com/2022/03/16/NNfirstclass/</div>
+      <div>笔记</div>
+      <div>http://example.com/2023/07/14/jindu714/</div>
     </div>
     <div class="license-meta">
       
@@ -409,7 +351,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月16日</div>
+          <div>2023年7月14日</div>
         </div>
       
       
@@ -441,15 +383,15 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/16/NNgit/" title="Git">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/06/01/DLclass/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -500,6 +442,12 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -714,6 +662,49 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

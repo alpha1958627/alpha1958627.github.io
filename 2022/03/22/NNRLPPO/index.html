@@ -16,11 +16,11 @@
   <meta name="author" content="Alpha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="不建议深究传值还是传引用  生成器 同是用的小括号元组和生成器的区别 生成器用了yield yield和return 迭代器与生成器     ## str和repr str和repr   ## 异常 try和except   raise,finally   # 文件   ## 打开   with open (&#39;a.text&#39;,&#39;w&#39;) as">
+    <meta name="description" content="P roximal policy Optimization（ppo）就是一种策略优化算法，在该算法中，为了相对保险地提高策略网络(policy)的性能，在一定的优化轮数(K_epochs)内，通过计算旧策略网络(policy_old)与当前策略网络(policy)间新权重和旧权重之间的距离来限制每次更新策略时的改变量。在每轮优化结束后，通过将权重从策略网络(policy)复制到旧策略网络(po">
   
   
   
-  <title>第一堂课 - Hexo</title>
+  <title>RL - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="第一堂课"></span>
+            <span id="subtitle" data-typed-text="RL"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-16 16:00" pubdate>
-          2022年3月16日 下午
+        <time datetime="2022-03-22 23:00" pubdate>
+          2022年3月22日 晚上
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          404 字
+          1.5k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 分钟
+          13 分钟
         
       </span>
     
@@ -287,91 +287,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">第一堂课</h1>
+            <h1 style="display: none">RL</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>不建议深究传值还是传引用</p>
-</blockquote>
-<h1 id="生成器">生成器</h1>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41711700/article/details/102410690">同是用的小括号元组和生成器的区别</a></p>
-<p>生成器用了<code>yield</code></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46906413/article/details/123032075">yield和return</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/yifengchaoran/article/details/113854853?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167895504616782425115979%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167895504616782425115979&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113854853-null-null.142%5Ev73%5Econtrol,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&amp;utm_term=%E7%94%9F%E6%88%90%E5%99%A8&amp;spm=1018.2226.3001.4187">迭代器与生成器</a></p>
-<table style="width:7%;">
-
-<tbody>
-<tr class="odd">
-<td>## str和repr <a
-target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/details/100042680">str和repr</a></td>
-</tr>
-<tr class="even">
-<td>## 异常 <code>try</code>和<code>except</code></td>
-</tr>
-<tr class="odd">
-<td><code>raise</code>,<code>finally</code></td>
-</tr>
-<tr class="even">
-<td># 文件</td>
-</tr>
-<tr class="odd">
-<td>## 打开</td>
-</tr>
-<tr class="even">
-<td><code>with open ('a.text','w') as f:</code></td>
-</tr>
-<tr class="odd">
-<td>## 读写</td>
-</tr>
-<tr class="even">
-<td>## 关闭</td>
-</tr>
-</tbody>
-</table>
-<h1 id="修饰器">修饰器</h1>
-<blockquote>
-<p>加了帽子加了鞋垫</p>
-</blockquote>
-<p>输入<code>func</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs *args```位置参数"><br>```**kwargs```关键字<br><br>## 使用<br><br>```python<br>@before<br>@after<br>def test()<br>    print(3)<br>test()<br></code></pre></td></tr></table></figure>
-<h2 id="实用性">实用性</h2>
-<ul>
-<li>函数运行的时间</li>
-</ul>
-<h1 id="tcpip协议">TCP/IP协议</h1>
-<ul>
-<li>传输层 TCP</li>
-<li>网络层 IP</li>
-</ul>
-<blockquote>
-<p>三次握手</p>
-</blockquote>
-<h2 id="另一种-udp">另一种 UDP</h2>
-<blockquote>
-<p>一次握手</p>
-</blockquote>
-<h1 id="get-and-post">get and post</h1>
-<ul>
-<li>明文和加密</li>
-</ul>
-<h1 id="json">json</h1>
-<blockquote>
-<p>轻量级的数据交换格式</p>
-</blockquote>
-<p>java和JavaScript没啥关系</p>
-<p>Vue封装了css，JavaScript，html</p>
-<h1 id="beautifulsoap">Beautifulsoap</h1>
-<p>能解析html里的数据的python库</p>
-<h1 id="flask">Flask</h1>
-<h1 id="sql">SQL</h1>
-<blockquote>
-<p>关系型数据库</p>
-</blockquote>
+                <p><span
+style="font-size: 24px; color: #66c18c;"><strong>P</strong></span>
+roximal policy
+Optimization（<code>ppo</code>）就是一种策略优化算法，在该算法中，为了相对保险地提高策略网络(<code>policy</code>)的性能，在一定的优化轮数(K_epochs)内，通过计算旧策略网络(<code>policy_old</code>)与当前策略网络(<code>policy</code>)间新权重和旧权重之间的距离来限制每次更新策略时的改变量。在每轮优化结束后，通过将权重从策略网络(<code>policy</code>)复制到旧策略网络(<code>policy_old</code>)中，就可以保证旧策略和新策略之间的状态保持同步，同时避免训练过程中梯度更新过于剧烈的情况，给训练带来稳定性。</p>
+<p>因此，在<strong><code>ppo</code></strong>算法中，需要维护两个相同的策略网络，即当前策略(<code>policy</code>)和旧策略(<code>policy_old</code>)，并在每次优化后将当前策略网络的权重复制到旧策略网络中，以确保两者状态同步，并且避免权重更新过于剧烈，从而使训练过程更加稳定。</p>
+<h2 id="我只用一个策略不行吗">我只用一个策略不行吗</h2>
+<p>在理论上，只使用一个策略网络进行训练是可行的，但在实践中，使用两个策略网络(<code>policy</code>和<code>policy_old</code>)可以提高<code>ppo</code>算法的训练稳定性，防止梯度更新过于过分，从而提高算法的收敛性能。</p>
+<p>当只使用一个策略网络时，梯度的更新可能会导致策略网络进入局部最优状态，并且难以跳出该局部最优状态。相反，使用两个策略网络可以确保具有与当前策略相同的架构和参数的旧策略网络在整个训练过程中都具有与当前策略相同的性能，并且可以在训练期间监测和比较它们的表现，从而更好地控制策略学习的稳定性。因此，尽管只使用一个策略网络也是可行的，但使用两个策略网络（当前策略和旧策略）是<code>ppo</code>算法的一项重要策略，有助于提高算法的表现和稳定性。</p>
+<p><code>ppo</code>算法中使用两个策略网络可以提高算法的训练稳定性主要有以下几个原因：</p>
+<ol type="1">
+<li><p>防止忘记性（forgetting）：当只有一个策略网络时，随着每个新样本进入训练，策略网络的参数会不断发生更新，因此网络可能会「忘记」先前学到的知识或技巧，导致策略网络的性能出现不稳定或下降。而通过使用两个策略网络，即当前策略(<code>policy</code>)和旧策略(<code>policy_old</code>)，策略迭代会在两个策略网络之间轮流，从而确保策略网络的状态和性能保持同步，减缓网络性能因过度迭代而降低的情况。</p></li>
+<li><p>使策略网络收敛更稳定：在强化学习任务中，优化哪个策略可以非常复杂，一个过于灵活的策略很可能会在学习过程中出现不稳定的行为。使用两个策略网络可以使训练更加可控，迫使策略向相同的方向变化，进而提高收敛性能。</p></li>
+<li><p>提供安全界限：在<code>ppo</code>算法中，限制每次更新策略时的距离（KL散度或者clip），以防止更新过大而不安全，导致策略网络的性能下降，使用两个策略网络可以在安全界限内进行更新，避免策略网络性能不稳定。</p></li>
+</ol>
+<h2 id="policy_old">policy_old</h2>
+<p>在<code>ppo</code>算法的训练中，旧策略(<code>policy_old</code>)不会进行更新，而是在每次优化之后将当前策略(<code>policy</code>)的权重复制到旧策略(<code>policy_old</code>)中。旧策略仅用于评估策略的性能以及计算计算新策略与旧策略之间的距离，在<code>ppo</code>算法的策略迭代中并不直接参与训练过程。</p>
+<p>当采用<code>ppo</code>算法训练强化学习<code>agent</code>时，在每个训练轮次完成之后，会比较当前策略网络(<code>policy</code>)和旧策略网络(<code>policy_old</code>)之间的差异，并应用近似优化理论的方法确保对新策略的优化是相对充分而且能保证策略稳定性的。因为新的策略网络的性能未知，所以<code>ppo</code>算法通过用旧的策略网络的性能和更新后的新策略网络的性能来比较两个策略网络的不同点。如果新的策略网络的性能更差，则会拒绝对此策略网络的更新，反之则接受。</p>
+<p>因此，旧策略网络在<code>ppo</code>算法中主要用于评估策略的性能并计算新策略与旧策略之间的差异，旧策略网络不会直接进行更新，只是用于在训练过程中提高策略的性能和稳定性。</p>
 
                 
               </div>
@@ -396,8 +334,8 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>第一堂课</div>
-      <div>http://example.com/2022/03/16/NNfirstclass/</div>
+      <div>RL</div>
+      <div>http://example.com/2022/03/22/NNRLPPO/</div>
     </div>
     <div class="license-meta">
       
@@ -409,7 +347,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月16日</div>
+          <div>2022年3月22日</div>
         </div>
       
       
@@ -441,15 +379,21 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/de
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/16/NNgit/" title="Git">
+                      <a href="/2022/03/22/NNRL/" title="RL">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git</span>
+                        <span class="hidden-mobile">RL</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/03/16/NNgit/" title="Git">
+                        <span class="hidden-mobile">Git</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
