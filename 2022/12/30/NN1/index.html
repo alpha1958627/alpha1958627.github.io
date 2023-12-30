@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          17k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          89 分钟
+          143 分钟
         
       </span>
     
@@ -407,6 +407,228 @@ GPU可以在处理几百个样本时，所花费的时间不比处理一个样�
 <h3
 id="pytorch只需要记录模型所有参数即可">pytorch只需要记录模型<font  color="#d2b42c">所有参数</font>即可</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MLP</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.hidden = nn.Linear(<span class="hljs-number">20</span>, <span class="hljs-number">256</span>)<br>        self.output = nn.Linear(<span class="hljs-number">256</span>, <span class="hljs-number">10</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">return</span> self.output(F.relu(self.hidden(x)))<br><br>net = MLP()<br>X = torch.randn(size=(<span class="hljs-number">2</span>, <span class="hljs-number">20</span>))<br>Y = net(X)<br><br>torch.save(net.state_dict(), <span class="hljs-string">&#x27;mlp.params&#x27;</span>)<br><span class="hljs-comment">#----读取----------------------</span><br>clone = MLP()<br>clone.load_state_dict(torch.load(<span class="hljs-string">&#x27;mlp.params&#x27;</span>))<br>clone.<span class="hljs-built_in">eval</span>()<br></code></pre></td></tr></table></figure>
+<h1 id="l_2正则-vs-l_1正则"><span class="math inline">\(L_2\)</span>正则
+vs <span class="math inline">\(L_1\)</span>正则</h1>
+<p>为什么我们首先使用范数<span
+class="math inline">\(L_2\)</span>，而不是范数<span
+class="math inline">\(L_1\)</span>。
+事实上，这个选择在整个统计领域中都是有效的和受欢迎的。 <span
+class="math inline">\(L_2\)</span>正则化线性模型构成经典的<strong>岭回归</strong>（ridge
+regression）算法，<span class="math inline">\(L_1\)</span>
+正则化线性回归是统计学中类似的基本模型，
+通常被称为<strong>套索回归</strong>（lasso regression）。 使用范数<span
+class="math inline">\(L_2\)</span>的一个原因是它对权重向量的大分量施加了巨大的惩罚。
+这使得我们的学习算法偏向于在大量特征上均匀分布权重的模型。
+在实践中，这可能使它们对单个变量中的观测误差更为稳定。</p>
+<p>相比之下，<span
+class="math inline">\(L_1\)</span>惩罚会导致模型将权重集中在<u>一小部分特征上，
+而将其他权重清除为零</u>。
+这称为<font  color="#66c18c"><strong>特征选择</strong></font>（feature
+selection），这可能是其他场景下需要的。</p>
+<h1 id="数据操作">数据操作</h1>
+<h2 id="大小">大小</h2>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.shape<br></code></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x.numel()<br></code></pre></td></tr></table></figure> ## 整形、融合 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">X = torch.arange(<span class="hljs-number">12</span>, dtype=torch.float32).reshape((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>))<br>Y = torch.tensor([[<span class="hljs-number">2.0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]])<br>torch.cat((X, Y), dim=<span class="hljs-number">0</span>), torch.cat((X, Y), dim=<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure> out:
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">(tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>],<br>         [ <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]),<br> tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>],<br>         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>],<br>         [ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>]]))<br></code></pre></td></tr></table></figure> # 数据预处理 ## 创建csv</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br>os.makedirs(os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>), exist_ok=<span class="hljs-literal">True</span>)<br>data_file = os.path.join(<span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-string">&#x27;house_tiny.csv&#x27;</span>)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(data_file, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(<span class="hljs-string">&#x27;NumRooms,Alley,Price\n&#x27;</span>)  <span class="hljs-comment"># 列名</span><br>    f.write(<span class="hljs-string">&#x27;NA,Pave,127500\n&#x27;</span>)  <span class="hljs-comment"># 每行表示一个数据样本</span><br>    f.write(<span class="hljs-string">&#x27;2,NA,106000\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;4,NA,178100\n&#x27;</span>)<br>    f.write(<span class="hljs-string">&#x27;NA,NA,140000\n&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="读取数据集">读取数据集</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><br>data = pd.read_csv(data_file)<br><span class="hljs-built_in">print</span>(data)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms Alley   Price<br><span class="hljs-number">0</span>       NaN  Pave  <span class="hljs-number">127500</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>   NaN  <span class="hljs-number">106000</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>   NaN  <span class="hljs-number">178100</span><br><span class="hljs-number">3</span>       NaN   NaN  <span class="hljs-number">140000</span><br></code></pre></td></tr></table></figure>
+<h2 id="处理缺失值">处理缺失值</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs, outputs = data.iloc[:, <span class="hljs-number">0</span>:<span class="hljs-number">2</span>], data.iloc[:, <span class="hljs-number">2</span>]<span class="hljs-comment"># 前两列是input，最后一列是output</span><br>inputs = inputs.fillna(inputs.mean())<span class="hljs-comment"># 填充NAN的值</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure>
+<h2 id="独热编码-one-hot-encoding">独热编码 one-hot encoding</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">inputs = pd.get_dummies(inputs, dummy_na=<span class="hljs-literal">True</span>)<span class="hljs-comment"># dummt_na给NAN也设一个特征列</span><br><span class="hljs-built_in">print</span>(inputs)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">   NumRooms  Alley_Pave  Alley_nan<br><span class="hljs-number">0</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">1</span>          <span class="hljs-number">0</span><br><span class="hljs-number">1</span>       <span class="hljs-number">2.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">2</span>       <span class="hljs-number">4.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br><span class="hljs-number">3</span>       <span class="hljs-number">3.0</span>           <span class="hljs-number">0</span>          <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>单列的文本数据变成了两个特征</p>
+</blockquote>
+<blockquote>
+<p>不建议深究传值还是传引用</p>
+</blockquote>
+<h1 id="生成器">生成器</h1>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41711700/article/details/102410690">同是用的小括号元组和生成器的区别</a></p>
+<p>生成器用了<code>yield</code></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46906413/article/details/123032075">yield和return</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/yifengchaoran/article/details/113854853?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167895504616782425115979%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167895504616782425115979&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113854853-null-null.142%5Ev73%5Econtrol,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&amp;utm_term=%E7%94%9F%E6%88%90%E5%99%A8&amp;spm=1018.2226.3001.4187">迭代器与生成器</a></p>
+<table style="width:7%;">
+
+<tbody>
+<tr class="odd">
+<td>## str和repr <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/Watkins_OS/article/details/100042680">str和repr</a></td>
+</tr>
+<tr class="even">
+<td>## 异常 <code>try</code>和<code>except</code></td>
+</tr>
+<tr class="odd">
+<td><code>raise</code>,<code>finally</code></td>
+</tr>
+<tr class="even">
+<td># 文件</td>
+</tr>
+<tr class="odd">
+<td>## 打开</td>
+</tr>
+<tr class="even">
+<td><code>with open ('a.text','w') as f:</code></td>
+</tr>
+<tr class="odd">
+<td>## 读写</td>
+</tr>
+<tr class="even">
+<td>## 关闭</td>
+</tr>
+</tbody>
+</table>
+<h1 id="修饰器">修饰器</h1>
+<blockquote>
+<p>加了帽子加了鞋垫</p>
+</blockquote>
+<p>输入<code>func</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs *args```位置参数"><br>```**kwargs```关键字<br><br>## 使用<br><br>```python<br>@before<br>@after<br>def test()<br>    print(3)<br>test()<br></code></pre></td></tr></table></figure>
+<h2 id="实用性">实用性</h2>
+<ul>
+<li>函数运行的时间</li>
+</ul>
+<h1 id="tcpip协议">TCP/IP协议</h1>
+<ul>
+<li>传输层 TCP</li>
+<li>网络层 IP</li>
+</ul>
+<blockquote>
+<p>三次握手</p>
+</blockquote>
+<h2 id="另一种-udp">另一种 UDP</h2>
+<blockquote>
+<p>一次握手</p>
+</blockquote>
+<h1 id="get-and-post">get and post</h1>
+<ul>
+<li>明文和加密</li>
+</ul>
+<h1 id="json">json</h1>
+<blockquote>
+<p>轻量级的数据交换格式</p>
+</blockquote>
+<p>java和JavaScript没啥关系</p>
+<p>Vue封装了css，JavaScript，html</p>
+<h1 id="beautifulsoap">Beautifulsoap</h1>
+<p>能解析html里的数据的python库</p>
+<h1 id="flask">Flask</h1>
+<h1 id="sql">SQL</h1>
+<blockquote>
+<p>关系型数据库</p>
+</blockquote>
+<h1 id="git">git</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&amp;q=git">教程</a></p>
+<h1 id="kaggle">kaggle</h1>
+<h1 id="kaggle房价预测">Kaggle房价预测</h1>
+<h2 id="下载">下载</h2>
+<p>用到了下文定义的脚本 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 如果没有安装pandas，请取消下一行的注释</span><br><span class="hljs-comment"># !pip install pandas</span><br><br>%matplotlib inline<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn<br><span class="hljs-keyword">from</span> d2l <span class="hljs-keyword">import</span> torch <span class="hljs-keyword">as</span> d2l<br><br>DATA_HUB[<span class="hljs-string">&#x27;kaggle_house_train&#x27;</span>] = (  <span class="hljs-comment">#@save</span><br>    DATA_URL + <span class="hljs-string">&#x27;kaggle_house_pred_train.csv&#x27;</span>,<br>    <span class="hljs-string">&#x27;585e9cc93e70b39160e7921475f9bcd7d31219ce&#x27;</span>)<br><br>DATA_HUB[<span class="hljs-string">&#x27;kaggle_house_test&#x27;</span>] = (  <span class="hljs-comment">#@save</span><br>    DATA_URL + <span class="hljs-string">&#x27;kaggle_house_pred_test.csv&#x27;</span>,<br>    <span class="hljs-string">&#x27;fa19780a7b011d9b009e8bff8e99922a8ee2eb90&#x27;</span>)<br><br>    train_data = pd.read_csv(download(<span class="hljs-string">&#x27;kaggle_house_train&#x27;</span>))<br>test_data = pd.read_csv(download(<span class="hljs-string">&#x27;kaggle_house_test&#x27;</span>))<br></code></pre></td></tr></table></figure> ## 检查 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(train_data.shape)<br><span class="hljs-built_in">print</span>(test_data.shape)<br></code></pre></td></tr></table></figure></p>
+<p>(1460, 81)</p>
+<p>(1459, 80) <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#前四个和最后两个特征以及标签</span><br><span class="hljs-built_in">print</span>(train_data.iloc[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">3</span>, -<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>]])<br></code></pre></td></tr></table></figure> <img
+src="https://pic4.zhimg.com/80/v2-8583ba758470808a9f830c2d53934ad8.png"
+alt="Image" /></p>
+<h2 id="预处理">预处理</h2>
+<p>我们可以看到，(在每个样本中，第一个特征是ID，)
+这有助于模型识别每个训练样本。
+虽然这很方便，但它不携带任何用于预测的信息。
+因此，在将数据提供给模型之前，(我们将其从数据集中删除)。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">all_features = pd.concat((train_data.iloc[:, <span class="hljs-number">1</span>:-<span class="hljs-number">1</span>], test_data.iloc[:, <span class="hljs-number">1</span>:]))<br></code></pre></td></tr></table></figure></p>
+<h2 id="提交">提交</h2>
+<p>将预测保存在CSV文件中可以简化将结果上传到Kaggle的过程。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">train_and_pred</span>(<span class="hljs-params">train_features, test_features, train_labels, test_data,</span><br><span class="hljs-params">                   num_epochs, lr, weight_decay, batch_size</span>):<br>    net = get_net()<br>    train_ls, _ = train(net, train_features, train_labels, <span class="hljs-literal">None</span>, <span class="hljs-literal">None</span>,<br>                        num_epochs, lr, weight_decay, batch_size)<br>    d2l.plot(np.arange(<span class="hljs-number">1</span>, num_epochs + <span class="hljs-number">1</span>), [train_ls], xlabel=<span class="hljs-string">&#x27;epoch&#x27;</span>,<br>             ylabel=<span class="hljs-string">&#x27;log rmse&#x27;</span>, xlim=[<span class="hljs-number">1</span>, num_epochs], yscale=<span class="hljs-string">&#x27;log&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;训练log rmse：<span class="hljs-subst">&#123;<span class="hljs-built_in">float</span>(train_ls[-<span class="hljs-number">1</span>]):f&#125;</span>&#x27;</span>)<br>    <span class="hljs-comment"># 将网络应用于测试集。</span><br>    preds = net(test_features).detach().numpy()<br>    <span class="hljs-comment"># 将其重新格式化以导出到Kaggle</span><br>    test_data[<span class="hljs-string">&#x27;SalePrice&#x27;</span>] = pd.Series(preds.reshape(<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>)[<span class="hljs-number">0</span>])<br>    submission = pd.concat([test_data[<span class="hljs-string">&#x27;Id&#x27;</span>], test_data[<span class="hljs-string">&#x27;SalePrice&#x27;</span>]], axis=<span class="hljs-number">1</span>)<br>    submission.to_csv(<span class="hljs-string">&#x27;submission.csv&#x27;</span>, index=<span class="hljs-literal">False</span>)<br></code></pre></td></tr></table></figure></p>
+<h1 id="数据下载">数据下载</h1>
+<h2 id="下载-1">下载</h2>
+<p>在整本书中，我们将下载不同的数据集，并训练和测试模型。
+这里我们(实现几个函数来方便下载数据)。
+首先，我们建立字典<code>DATA_HUB</code>，
+它可以将数据集名称的字符串映射到数据集相关的二元组上，
+这个二元组包含数据集的<code>url</code>和验证文件完整性的<code>sha-1</code>密钥。
+所有类似的数据集都托管在地址为<code>DATA_URL</code>的站点上。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> hashlib<br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> tarfile<br><span class="hljs-keyword">import</span> zipfile<br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment">#@save</span><br>DATA_HUB = <span class="hljs-built_in">dict</span>()<br>DATA_URL = <span class="hljs-string">&#x27;http://d2l-data.s3-accelerate.amazonaws.com/&#x27;</span><br><br><span class="hljs-comment"># --------------------------</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">name, cache_dir=os.path.join(<span class="hljs-params"><span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;data&#x27;</span></span>)</span>):  <span class="hljs-comment">#@save</span><br>    <span class="hljs-string">&quot;&quot;&quot;下载一个DATA_HUB中的文件，返回本地文件名&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">assert</span> name <span class="hljs-keyword">in</span> DATA_HUB, <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;name&#125;</span> 不存在于 <span class="hljs-subst">&#123;DATA_HUB&#125;</span>&quot;</span><br>    url, sha1_hash = DATA_HUB[name]<br>    os.makedirs(cache_dir, exist_ok=<span class="hljs-literal">True</span>)<br>    fname = os.path.join(cache_dir, url.split(<span class="hljs-string">&#x27;/&#x27;</span>)[-<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">if</span> os.path.exists(fname):<br>        sha1 = hashlib.sha1()<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(fname, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>            <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>                data = f.read(<span class="hljs-number">1048576</span>)<br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> data:<br>                    <span class="hljs-keyword">break</span><br>                sha1.update(data)<br>        <span class="hljs-keyword">if</span> sha1.hexdigest() == sha1_hash:<br>            <span class="hljs-keyword">return</span> fname  <span class="hljs-comment"># 命中缓存</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;正在从<span class="hljs-subst">&#123;url&#125;</span>下载<span class="hljs-subst">&#123;fname&#125;</span>...&#x27;</span>)<br>    r = requests.get(url, stream=<span class="hljs-literal">True</span>, verify=<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(fname, <span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(r.content)<br>    <span class="hljs-keyword">return</span> fname<br></code></pre></td></tr></table></figure>
+还有两个<strong>解压</strong>和下载<strong>所有</strong>数据集的函数
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">download_extract</span>(<span class="hljs-params">name, folder=<span class="hljs-literal">None</span></span>):  <span class="hljs-comment">#@save</span><br>    <span class="hljs-string">&quot;&quot;&quot;下载并解压zip/tar文件&quot;&quot;&quot;</span><br>    fname = download(name)<br>    base_dir = os.path.dirname(fname)<br>    data_dir, ext = os.path.splitext(fname)<br>    <span class="hljs-keyword">if</span> ext == <span class="hljs-string">&#x27;.zip&#x27;</span>:<br>        fp = zipfile.ZipFile(fname, <span class="hljs-string">&#x27;r&#x27;</span>)<br>    <span class="hljs-keyword">elif</span> ext <span class="hljs-keyword">in</span> (<span class="hljs-string">&#x27;.tar&#x27;</span>, <span class="hljs-string">&#x27;.gz&#x27;</span>):<br>        fp = tarfile.<span class="hljs-built_in">open</span>(fname, <span class="hljs-string">&#x27;r&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">assert</span> <span class="hljs-literal">False</span>, <span class="hljs-string">&#x27;只有zip/tar文件可以被解压缩&#x27;</span><br>    fp.extractall(base_dir)<br>    <span class="hljs-keyword">return</span> os.path.join(base_dir, folder) <span class="hljs-keyword">if</span> folder <span class="hljs-keyword">else</span> data_dir<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download_all</span>():  <span class="hljs-comment">#@save</span><br>    <span class="hljs-string">&quot;&quot;&quot;下载DATA_HUB中的所有文件&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> DATA_HUB:<br>        download(name)<br></code></pre></td></tr></table></figure></p>
+<h1 id="automl">AutoML</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> autogluon.tabular <span class="hljs-keyword">import</span> TabularDataset,TabularPredictor<br><span class="hljs-comment">#训练</span><br>train_data=Tabulardataset(<span class="hljs-string">&#x27;train.csv&#x27;</span>)<br><span class="hljs-built_in">id</span>,label=<span class="hljs-string">&#x27;PassengerId&#x27;</span>,<span class="hljs-string">&#x27;survived&#x27;</span><br>predictor=TabularPredictor(label=label).fit(train_data.drop(columns=[<span class="hljs-built_in">id</span>]))<br><br><span class="hljs-comment">#预测并提交</span><br>test_data=Tabulardataset(<span class="hljs-string">&#x27;test.csv&#x27;</span>)<br>preds=pedictor.predict(test_data.drop(columns=[<span class="hljs-built_in">id</span>]))<br>submission=pd.DataFrame(&#123;<span class="hljs-built_in">id</span>:test_data[<span class="hljs-built_in">id</span>],label:preds&#125;)<br>submission.to_csv(<span class="hljs-string">&#x27;submission.csv&#x27;</span>,index=<span class="hljs-literal">False</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="spiking-neural-network-第三代神经网路">Spiking Neural Network
+第三代神经网路</h1>
+<h2 id="脉冲神经元">脉冲神经元</h2>
+<ul>
+<li>ANN：直接过激活函数</li>
+<li>SNN：不断积累，过阈值之后再输出，然后重置。</li>
+</ul>
+<ol type="1">
+<li>LIF</li>
+<li>IF</li>
+</ol>
+<p>常被简化成离散计算 不是每时每刻都发放脉冲 ## 低功耗 -
+ANN：精度高但是功耗大 -
+SNN：基于<strong>事件触发</strong>的特性与<strong>神经形态</strong>的硬件（TrueNorth、SpiNNaker等）结合，极大降低功耗。如果用GPU、华为昇騰等则不行，功耗会更大。</p>
+<h2 id="鲁棒性">鲁棒性</h2>
+<p><img
+src="https://pic4.zhimg.com/80/v2-01c62b61bf2426e1a034a48706291b87.png"
+alt="对输入进行加噪以后，反而得到更好的性能" /> <strong>Why</strong>
+积分带有<strong>高频滤波</strong>的特性 ## 学习方法 - 有监督 - Surrogate
+Gradient Method（替代梯度 - Time-based Method - BP with
+STDP(生物合理性)</p>
+<ul>
+<li>无监督
+<ul>
+<li>Spike-based EM</li>
+</ul></li>
+<li>奖励学习</li>
+<li>ANN-SNN</li>
+</ul>
+<h3 id="替代梯度">替代梯度</h3>
+<p><img
+src="https://pic4.zhimg.com/80/v2-43b7d49c3823ef8849250e146997b2e3.png"
+alt="Image" /> ## 总结 - 更具生物合理性 - 鲁棒性高 - 容易生物交叉 -
+缺乏合适的类脑数据集、算法 - 性能不足，商业化低 - 脑科学认知不足 ##
+超参数进化和蒸馏 现有通用结构：单一神经元，生物仿生性差；
+高维神经元：性能越来越好，鲁棒性越来越好 <img
+src="https://pic4.zhimg.com/80/v2-4c363a169e75bea3c08196e7f3509871.png"
+alt="LIF计算代价低但是生物可信度不高" /> - 超参数过多 ，解决方法： 进化
+- 计算代价大 ，解决方法： 蒸馏</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-9bcae3f8560a457688a56730a6aa32be.png" /></p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-406599a0d369cf75b1183973b9dfc58c.png"
+alt="系统框图" /> ## 相关网站 <a
+target="_blank" rel="noopener" href="https://openreview.net/">审稿人互怼</a> <a
+target="_blank" rel="noopener" href="https://paperswithcode.com/">s</a> <a
+target="_blank" rel="noopener" href="https://poloclub.github.io/cnn-explainer/#article-relu">CNN可视化</a></p>
+<h1
+id="transformer"><font  color="#66c18c"><strong>Transformer</strong></font></h1>
+<blockquote>
+<p>Attention is all you need</p>
+</blockquote>
+<ul>
+<li><p>多头注意力</p></li>
+<li><p>前馈神经网络FFN</p></li>
+<li><p>masked 多头注意力 遮住后来的信息</p></li>
+<li><p>自注意力</p></li>
+<li><p>并行化</p></li>
+<li><p>没有循环结构</p></li>
+<li><p>预训练</p></li>
+</ul>
+<p>以前都是RNN</p>
+<ul>
+<li>可用于图像处理</li>
+<li>医学成像</li>
+<li>语音识别</li>
+</ul>
+<p>从NLP出发，拓展到多领域</p>
+<h2 id="计算机视觉">计算机视觉</h2>
+<h3 id="视频预测vffp">视频预测VFFP</h3>
+<ul>
+<li>双流计算</li>
+<li>中间转换</li>
+</ul>
+<p>计算量大</p>
 
                 
               </div>
@@ -486,8 +708,8 @@ id="pytorch只需要记录模型所有参数即可">pytorch只需要记录模型
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/NN2/" title="正则化">
-                        <span class="hidden-mobile">正则化</span>
+                      <a href="/2022/12/27/NNnvidia-smi/" title="nvidia-smi">
+                        <span class="hidden-mobile">nvidia-smi</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

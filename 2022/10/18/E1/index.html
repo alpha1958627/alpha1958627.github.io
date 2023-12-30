@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          741 字
+          2.7k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          7 分钟
+          23 分钟
         
       </span>
     
@@ -342,6 +342,195 @@ class="math inline">\(C\)</span>之间消耗<br />
 <p><strong>视在功率</strong> <span
 class="math display">\[S=UI=\left|Z\right|I^2\]</span> <span
 class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
+<h1 id="二极管">二极管</h1>
+<h2 id="双极型二极管">双极型二极管</h2>
+<p>分为<span class="math inline">\(PNP\)</span>和<span
+class="math inline">\(NPN\)</span><br />
+<strong><em>要求</em></strong>：<br />
+1. 发射区高参杂 2. 基区很薄 3. 基点结面积大</p>
+<h3 id="放大条件">放大条件</h3>
+<ul>
+<li>发射结正偏，集电结反偏、
+<ul>
+<li><span
+class="math inline">\(E\)</span>发射区向基区<strong>注入</strong>载流子</li>
+<li><span
+class="math inline">\(B\)</span>基区<strong>控制和传输载流子</strong></li>
+<li><span
+class="math inline">\(C\)</span>集电区<strong>收集</strong>载流子</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>发射结加正向电压，扩散运动形成发射极电流（注入载流子）发射区的电子越过发射结扩散到基区，基区的空穴扩散到发射区—形成发射极电流<span
+class="math inline">\(I_{E}\)</span></li>
+<li>扩散到基区的自由电子与空穴的复合运动形成基极电流（传输和控制载流子）电子到达基区，少数与空穴复合形成基极电流<span
+class="math inline">\(I_{bn}\)</span>，复合掉的空穴由<span
+class="math inline">\(V_{BB}\)</span>补充。多数电子在基区继续扩散，到达集电结的一侧。</li>
+</ol>
+<h3 id="特性">特性</h3>
+<p><span class="math inline">\(I_C=I_{CN}=I_{CBO}\)</span><br />
+<span class="math inline">\(I_B\)</span><br />
+<span class="math inline">\(I_E\)</span> ### 三种组态 1. 共发射极接法 2.
+共基极接法 3. 共集电极接法</p>
+<h2 id="场效应管">场效应管</h2>
+<figure>
+<img src="/img/E3.jpg" alt="各种半导体器件" />
+<figcaption aria-hidden="true">各种半导体器件</figcaption>
+</figure>
+<h3 id="绝缘栅型">绝缘栅型</h3>
+<h4 id="增强型">增强型</h4>
+<h4 id="耗尽型">耗尽型</h4>
+<h3 id="结场型">结场型</h3>
+<h1 id="放大电路基础">放大电路基础</h1>
+<ol type="1">
+<li>把放大电路转换成等效电路</li>
+<li>计算特性参数，重点关注：</li>
+</ol>
+<p><span class="math display">\[
+A_u=\frac{U_o}{U_i}
+\]</span></p>
+<p><span class="math display">\[
+输入电阻R_i=\frac{U_i}{I_i}
+\]</span></p>
+<p><span class="math display">\[
+输出电阻R_o=\frac{U_o}{I_o}\\
+\]</span> 3. 高频<span class="math inline">\(\pi\)</span>、低频<span
+class="math inline">\(\pi\)</span>、<span class="math inline">\(P106
+图3-27\)</span>简化模型、<span class="math inline">\(h\)</span>参数</p>
+<h2 id="低频pi"><strong>低频<span
+class="math inline">\(\pi\)</span></strong></h2>
+<ul>
+<li><span class="math inline">\(C\rightarrow E\)</span>
+电阻和电流源串联</li>
+<li><span class="math inline">\(B\rightarrow E\)</span>
+两个电阻串联</li>
+</ul>
+<h2 id="简化模型"><strong>简化模型</strong></h2>
+<ul>
+<li><p><span class="math inline">\(C\rightarrow E\)</span>
+一个电流源</p></li>
+<li><p><span class="math inline">\(B\rightarrow E\)</span> 一个电阻
+&gt;任何放大电路都可以看成二端口i</p></li>
+<li><p>通频带</p></li>
+<li><p>非线性失真系数<span class="math inline">\(D\)</span></p></li>
+<li><p>最大不失真输出幅度：峰峰值<span
+class="math inline">\((U_{opp},I_{opp})\)</span>or有效值<span
+class="math inline">\((U_{om},I_{om})\)</span></p></li>
+<li><p>最大输出功率和效率<span
+class="math inline">\(\eta=\frac{P_{om}}{P_v}\)</span></p>
+<p>其中<span class="math inline">\(P_v\)</span>为直流电源消耗的功率</p>
+<h2 id="放大原则">放大原则</h2></li>
+</ul>
+<ol type="1">
+<li><strong>晶体管</strong>工作在放大区，<strong>场效应管</strong>工作在恒流区</li>
+<li><strong>晶体管</strong>有<span class="math inline">\(\Delta
+u_{BE}\)</span>，<strong>场效应管</strong>有<span
+class="math inline">\(\Delta u_{GS}\)</span>（打开了水龙头）</li>
+</ol>
+<figure>
+<img src="/img/E41.jpg" alt="单极共射电路" />
+<figcaption aria-hidden="true">单极共射电路</figcaption>
+</figure>
+<h1 id="单级共射放大电路">单级共射放大电路</h1>
+<figure>
+<img src="/img/E5.png" alt="单极共射电路" />
+<figcaption aria-hidden="true">单极共射电路</figcaption>
+</figure>
+<ul>
+<li><p><span class="math inline">\(T\)</span>:<span
+class="math inline">\(NPN\)</span>型三极管</p></li>
+<li><p><span class="math inline">\(V_{BB}\)</span>：使得发射极正偏<span
+class="math inline">\(U_{BE}&gt;U_{on}\)</span></p>
+<p>若<span class="math inline">\(V_{BB}=0\)</span> ，必失真</p></li>
+<li><p><span class="math inline">\(V_{CC}\)</span>：使得收集极反偏<span
+class="math inline">\(U_{CE}\ge U_{BE}\)</span></p></li>
+</ul>
+<blockquote>
+<p>注意<strong>输出输入反相</strong></p>
+</blockquote>
+<p>因为<span class="math inline">\(U_C=V_{CC}-\beta I_b R\)</span></p>
+<figure>
+<img src="/img/EZ.png" alt="三种放大电路" />
+<figcaption aria-hidden="true">三种放大电路</figcaption>
+</figure>
+<blockquote>
+<p>哪个极接地就是哪类</p>
+</blockquote>
+<blockquote>
+<p>输入电阻不考虑<span
+class="math inline">\(R_S\)</span>,输出电阻不考虑<span
+class="math inline">\(R_L\)</span></p>
+</blockquote>
+<h2 id="共集电极放大电路">共集电极放大电路</h2>
+<ul>
+<li>通过<span class="math inline">\(V_{CC}\)</span>接地</li>
+<li><span class="math inline">\(I_{B}\approx
+\frac{V_{CC}-U_{BE}}{R_1+(1+\beta )R_2}\)</span></li>
+<li>同相放大(<strong>射极跟随放大</strong>)</li>
+<li><span class="math inline">\(U_0=U_B-U_{BE}\)</span>
+故没有电压放大功能，只有<strong>电流放大</strong></li>
+</ul>
+<p><font face="楷体" size="2" color="#5d3f51">由于共集电极放大器具有<strong>输入阻抗高、输出阻抗低</strong>的优点，所以在多级放大电路中，通常利用共集电极放大器将前级和后级放大器进行隔离，由它对信号进行缓冲放大，以免前、后级放大器互相影响。又因共集电极放大器具有电流放大功能，所以不仅串联稳压电源采用此类放大器，而且有的多级放大电路的末级放大器也采用此类放大器。
+</font></p>
+<h2 id="直流负反馈">直流负反馈</h2>
+<p>为防止温度影响工作点，导致失真</p>
+<blockquote>
+<p>常使用分压式偏置电路</p>
+</blockquote>
+<p>温度升高,<span class="math inline">\(\beta\)</span>变大，<span
+class="math inline">\(I_{CQ}\)</span>变大</p>
+<p><span class="math inline">\(U_{EQ}=I_{EQ}\cdot R_e\)</span>变大</p>
+<p><span class="math inline">\(U_{BEQ}=U_{BQ}-U_{EQ}\)</span>变小</p>
+<p>使得<span class="math inline">\(I_B\)</span>变小，制约<span
+class="math inline">\(I_C\)</span></p>
+<h1 id="交流电机">交流电机</h1>
+<h1 id="公式">公式</h1>
+<ul>
+<li>转速 <span class="math inline">\(n_0=\frac{60 f_1}{p} ,\)</span>
+p为极对数;
+<ul>
+<li>旋转磁场和转子相对转速<span
+class="math inline">\((n_0-n)\)</span></li>
+</ul></li>
+<li>转差率 <span class="math inline">\(s=\frac{n_0-n}{n_0}\)</span>
+<ul>
+<li><span class="math inline">\(1\%-9\%\)</span></li>
+<li><span class="math inline">\(n=0,s=1,\)</span>起动瞬间</li>
+<li><span class="math inline">\(n=(1-s)n_0\)</span></li>
+</ul></li>
+<li>定子
+<ul>
+<li>电流频率<span
+class="math inline">\(f_1=\frac{pn_0}{60}\)</span></li>
+</ul></li>
+<li>转子
+<ul>
+<li>频率<span
+class="math inline">\(f_2=\frac{p(n_0-n)}{60}=sf_1\)</span></li>
+<li>电动势<span class="math inline">\(E_2=sE_{20}\)</span></li>
+<li>感抗<span class="math inline">\(X_2=sX_{20}\)</span></li>
+<li>电流<span
+class="math inline">\(I_2=\frac{sE_{20}}{\sqrt{R_2^2+(sX_{20})^2}}\)</span></li>
+<li>功率因数<span class="math inline">\(\cos
+\varphi=\frac{R_2}{\sqrt{R_2^2+(sX_{20})^2}}\)</span></li>
+<li>关系图</li>
+</ul></li>
+</ul>
+<h1
+id="pulse-width-modulation"><font  color="#66c18c"><strong>P</strong></font>ulse
+<font  color="#66c18c"><strong>W</strong></font>idth
+<font  color="#66c18c"><strong>M</strong></font>odulation</h1>
+<h2 id="面积等效原理">面积等效原理</h2>
+<p>冲量相同，时间、形状不同的波形对惯性环节具有相同效果</p>
+<blockquote>
+<p>使用方波信号模拟正弦信号</p>
+</blockquote>
+<h2
+id="占空比-duty-ratio"><font  color="#66c18c"><strong>占空比</strong></font>
+Duty Ratio</h2>
+<p><span class="math display">\[\frac{t_{高电平}}{T}\]</span></p>
+<p><span class="math display">\[U=U_m\times 占空比\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span>D/A转换</p>
 
                 
               </div>
@@ -421,8 +610,8 @@ class="math display">\[S=\sqrt{P^2+Q^2}\]</span></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/18/E3/" title="半导体器件">
-                        <span class="hidden-mobile">半导体器件</span>
+                      <a href="/2022/10/18/M1/" title="材力笔记">
+                        <span class="hidden-mobile">材力笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
