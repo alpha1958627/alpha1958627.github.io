@@ -12,7 +12,7 @@ In this set of projects, I use advanced quanitative methods to tackle the proble
 
 ## Articles
 
-David B. Carter, Bailee Donahue, and Rob Williams. "Border Walls, Cooperation, and Illicit Trade."  *International Studies Quarterly*
+David B. Carter, Bailee Donahue, and Rob Williams. "Border Walls, Cooperation, and Illicit Trade."  *International Studies Quarterly*.
 
 > The number of fortified borders around the world has risen precipitously. This surge in walls is an important part of the larger globalization “backlash,” as countries react to the unwanted consequences of economic openness and globalization, with a rise in illicit trade and smuggling being a prominent example. Despite the prominence of the idea that walls are built to combat illicit flows, no research systematically explores how walls generally affect illicit trade. This is a notable omission for at least two reasons. First, the most prominent explanations for wall construction put combating illicit trade front and center. Second, recent work that finds walls significantly reduce legal trade argues that this finding derives from border fortifications diverting illegal trade to ports of entry, which leads to more inspection, security, and transaction costs. We develop a new measure of illicit trade flows using over five decades of product-level data and provide a battery of evidence that shows border barriers increase illicit flows at ports of entry.
 

@@ -17,7 +17,7 @@ and a research collaborator with the
 I earned my PhD in Political Science from the
 [University *of* North Carolina *at* Chapel Hill](https://www.unc.edu) and my
 BA in Political Science from [Haverford College](https://www.haverford.edu).
-My academic work has been [published](publications) or is forthcoming in the
+My academic work has been [published](publications) in the
 *American Political Science Review*, *International Studies Quarterly*,
 *Conflict Management and Peace Science*, and
 *Political Science Research and Methods*, among other outlets. This
