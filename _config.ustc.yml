@@ -1,0 +1,5 @@
+# USTC Homepage Configuration
+# Build with: jekyll build --config _config.yml,_config.ustc.yml
+
+url: https://home.ustc.edu.cn
+baseurl: /~liangjh

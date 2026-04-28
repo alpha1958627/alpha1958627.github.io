@@ -4,7 +4,8 @@
       "Bash(jekyll build *)",
       "Bash(rm -f Gemfile.lock)",
       "Bash(bundle install *)",
-      "Bash(bundle exec *)"
+      "Bash(bundle exec *)",
+      "Bash(gem search *)"
     ]
   }
 }

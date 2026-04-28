@@ -1,36 +1,53 @@
 #!/bin/bash
-# Deploy script for USTC homepage
-# Usage: ./deploy.sh
+# Deploy script for dual platform deployment
+# Usage:
+#   ./deploy.sh github    - Deploy to GitHub Pages
+#   ./deploy.sh ustc      - Deploy to USTC homepage
 
-# Configuration
-FTP_HOST="home.ustc.edu.cn"
-FTP_USER="liangjh"  # 你的科大邮箱用户名
-FTP_TARGET="/public_html"  # 或者 "~" 如果直接上传到home目录
+set -e
 
-echo "Deploying to USTC homepage: home.ustc.edu.cn/~${FTP_USER}"
+echo "=================================="
+echo "Jiahua Liang's Homepage Deploy Script"
+echo "=================================="
 echo ""
 
-# Build the site first
-echo "Building Jekyll site..."
-bundle exec jekyll build
+# Build for GitHub Pages (default)
+build_github() {
+    echo "Building for GitHub Pages..."
+    bundle exec jekyll build
+    echo ""
+    echo "Built files are in _site/"
+    echo "Deploy by pushing to GitHub or upload _site/ contents to GitHub Pages"
+}
 
-if [ $? -ne 0 ]; then
-    echo "Build failed!"
-    exit 1
-fi
+# Build for USTC Homepage
+build_ustc() {
+    echo "Building for USTC Homepage..."
+    bundle exec jekyll build --config _config.yml,_config.ustc.yml
+    echo ""
+    echo "Built files are in _site/"
+    echo ""
+    echo "FTP Upload Instructions:"
+    echo "  Host: home.ustc.edu.cn"
+    echo "  User: liangjh"
+    echo "  Target: public_html/"
+    echo ""
+    echo "Command line upload:"
+    echo "  lftp -u liangjh home.ustc.edu.cn -e 'mirror -R _site/ public_html; quit'"
+}
+
+case "${1:-github}" in
+    github)
+        build_github
+        ;;
+    ustc)
+        build_ustc
+        ;;
+    *)
+        echo "Usage: $0 {github|ustc}"
+        exit 1
+        ;;
+esac
 
 echo ""
-echo "Build successful!"
-echo ""
-echo "Please upload the contents of _site/ directory to your USTC FTP server."
-echo ""
-echo "FTP credentials:"
-echo "  Host: $FTP_HOST"
-echo "  User: $FTP_USER"
-echo "  Target directory: $FTP_TARGET"
-echo ""
-echo "After FTP upload, your site will be available at:"
-echo "  https://home.ustc.edu.cn/~${FTP_USER}"
-echo ""
-echo "To upload via command line, use:"
-echo "  lftp -u $FTP_USER $FTP_HOST -e 'mirror -R _site/ $FTP_TARGET; quit'"
+echo "Done!"
