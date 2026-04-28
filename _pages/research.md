@@ -23,9 +23,7 @@ My research focuses on **thin film flows** under the influence of **thermal fluc
 
 This project investigates the mechanisms governing droplet migration induced by curvature effects, with applications in microfluidic devices and coating processes.
 
-<video width="100%" controls autoplay loop muted>
-  <source src="/images/research/film.gif" type="image/gif">
-</video>
+<img src="/images/research/film.gif" alt="Droplet Migration Simulation" width="100%">
 
 &nbsp;
 

@@ -5,7 +5,10 @@
       "Bash(rm -f Gemfile.lock)",
       "Bash(bundle install *)",
       "Bash(bundle exec *)",
-      "Bash(gem search *)"
+      "Bash(gem search *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
