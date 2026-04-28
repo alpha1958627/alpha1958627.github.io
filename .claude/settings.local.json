@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jekyll build *)",
+      "Bash(rm -f Gemfile.lock)",
+      "Bash(bundle install *)",
+      "Bash(bundle exec *)"
+    ]
+  }
+}

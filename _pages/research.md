@@ -4,32 +4,30 @@ title: "Research"
 permalink: /research/
 author_profile: true
 header:
-  og_image: "research/ecdf.png"
+  og_image: "research/film.gif"
 ---
 
-My academic research falls into two main areas: understanding the influence of
-geography on actor behavior before, during, and after civil conflict, and
-developing new tools to improve the study of institutions (both formal and
-informal) in peace and conflict. One strand of research in this first area
-explores how the territories that ethnic groups inhabit shape rebel group
-formation and condition their relationship with the state. My interest in
-geography also informs projects on active conflicts including the targeting of
-UN peacekeepers by insurgent groups, civilian victimization after rebel
-territorial conquest, and communal violence in fragile settings.
+My research focuses on **thin film flows** under the influence of **thermal fluctuations**, fluid stability, and **stochastic lubrication equations**. I am particularly interested in the dynamics of curvature-driven droplet migration.
 
-My other main research agenda uses advanced methods to develop new measures of
-institutions. One project uses Bayesian item response theory to measure the
-strength of peace agreements as a latent variable and free researchers from
-post-treatment bias caused by using the duration of agreements as a proxy for
-their strength. In others, I apply unsupervised learning techniques to over a
-billion observations of product-level international trade data to measure
-economic interdependence and illicit economic exchange.
+## Research Topics
 
-In a new avenue of research, I leverage social media data to explore
-participation in extremist movements across multiple contexts, gaining insight
-into the early stages of radicalization.
+- **Thin Film Flow**: Interfacial phenomena and stability of thin liquid films
+- **Thermal Fluctuations**: Effects of thermal noise on fluid dynamics at small scales
+- **Stochastic Lubrication**: Brownian motion and stochastic processes in lubricating systems
+- **Droplet Migration**: Dynamics of droplets driven by curvature gradients
 
-<nbsp>
+## Ongoing Projects
+
+### Study on the Dynamics of Curvature-Driven Droplet Migration
+*National-level College Students' Innovation and Entrepreneurship Training Program*
+
+This project investigates the mechanisms governing droplet migration induced by curvature effects, with applications in microfluidic devices and coating processes.
+
+<video width="100%" controls autoplay loop muted>
+  <source src="/images/research/film.gif" type="image/gif">
+</video>
+
+&nbsp;
 
 {% include base_path %}
 
